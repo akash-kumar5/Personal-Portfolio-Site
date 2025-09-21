@@ -50,10 +50,10 @@ export default function Home() {
             href="/projects"
             whileTap={{ scale: 0.95 }}
             whileHover={{ scale: 1.05 }}
-            className="relative bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white font-bold text-xl rounded-2xl px-6 py-3 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out overflow-hidden"
+            className="relative bg-gradient-to-r from-red-800 to-red-600 hover:from-red-900 hover:to-red-800 text-white font-bold text-xl rounded-2xl px-6 py-3 shadow-lg hover:shadow-xl transition-all duration-200 ease-in-out overflow-hidden"
           >
             <span className="relative z-10">Explore My Work</span>
-            <span className="absolute inset-0 rounded-2xl border-[3px] border-transparent pointer-events-none animate-borderMagic"></span>
+            <span className="absolute inset-0 rounded-2xl border-[2px] border-transparent pointer-events-none animate-borderMagic"></span>
           </MotionLink>
         </div>
       </motion.div>
