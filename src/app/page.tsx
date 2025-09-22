@@ -2,7 +2,6 @@
 import { ParticlesBackground } from "@/components/ParticlesBackground";
 import ProjectCard from "@/components/ProjectCard";
 import TechMarquee from "@/components/TechMarquee";
-import TechStackIcon from "@/components/TechStackIcon";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
