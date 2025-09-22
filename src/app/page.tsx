@@ -1,13 +1,13 @@
 "use client";
 import { ParticlesBackground } from "@/components/ParticlesBackground";
 import ProjectCard from "@/components/ProjectCard";
+import TechMarquee from "@/components/TechMarquee";
 import TechStackIcon from "@/components/TechStackIcon";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function Home() {
   const MotionLink = motion(Link);
-  
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center">
@@ -141,51 +141,14 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
         viewport={{ once: true }}
-        className="mt-20 py-10 mb-20 text-center max-w-3xl mx-auto w-full"
+        className="mt-20 py-10 mb-20 text-center max-w-4xl mx-auto w-full"
       >
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8">
           <span className="bg-gradient-to-r from-red-600 via-white/70 to-red-600 bg-clip-text text-transparent">
             Tech Stack
           </span>
         </h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
-          {/* Tech 1 */}
-          <TechStackIcon
-            src="/tech-icons/python.svg"
-            name="Python"
-            alt="python"
-          />
-          {/* Tech 2 */}
-          <TechStackIcon
-            src="/tech-icons/javascript.svg"
-            name="Javascript"
-            alt="javascript"
-          />
-          {/* Tech 3 */}
-          <TechStackIcon src="/tech-icons/react.svg" name="React" alt="react" />
-          {/* Tech 4 */}
-          <TechStackIcon
-            src="/tech-icons/nodejs.svg"
-            name="NodeJs"
-            alt="nodejs"
-          />
-          {/* Tech 5 */}
-          <TechStackIcon src="/tech-icons/aws.svg" name="AWS" alt="aws" />
-          {/* Tech 6 */}
-          <TechStackIcon
-            src="/tech-icons/nextjs.svg"
-            name="Next.js"
-            alt="next.js"
-          />
-          {/* Tech 7 */}
-          <TechStackIcon
-            src="/tech-icons/tailwindcss.svg"
-            alt="Tailwind Css"
-            name="Tailwind CSS"
-          />
-          {/* Tech 8 */}
-          <TechStackIcon src="/tech-icons/git.svg" alt="Git" name="Git" />
-        </div>
+        <TechMarquee/>
       </motion.div>
     </main>
   );

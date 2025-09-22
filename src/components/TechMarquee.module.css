@@ -1,0 +1,57 @@
+.marquee {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  --gap: 2rem;
+
+  /* Fade effect (works in all modern browsers) */
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+
+.track {
+  display: flex;
+  gap: var(--gap);
+  width: max-content;
+  will-change: transform;
+}
+
+/* Continuous left scroll */
+@keyframes scroll-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Continuous right scroll */
+@keyframes scroll-right {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-left {
+  animation: scroll-left 20s linear infinite;
+}
+
+.animate-right {
+  animation: scroll-right 25s linear infinite;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 72px; /* adjust as needed */
+}
