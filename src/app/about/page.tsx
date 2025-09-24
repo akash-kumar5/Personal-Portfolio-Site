@@ -138,10 +138,10 @@ export default function AboutPage() {
                 label="Collaboration"
                 value="Worked in cross-functional teams; comfortable with Git-based workflows and rapid prototyping"
               />
-              <InfoCard
+              {/* <InfoCard
                 label="Hobbies"
                 value="Reading markets & AI papers, light workouts, spiritual travel"
-              />
+              /> */}
             </motion.div>
           </motion.aside>
 
