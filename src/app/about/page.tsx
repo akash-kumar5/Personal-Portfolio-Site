@@ -272,7 +272,7 @@ function SkillGroupDisplay({ group }: { group: SkillGroup }) {
 
 
 // UNCHANGED: Kept for the mobile swipe view
-function SkillCard({ group, index }: { group: SkillGroup; index: number }) {
+function SkillCard({ group }: { group: SkillGroup; index: number }) {
   return (
     <motion.div
       className="h-full flex flex-col justify-between"
