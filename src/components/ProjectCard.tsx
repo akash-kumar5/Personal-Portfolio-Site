@@ -1,45 +1,79 @@
 import { motion } from "framer-motion";
 
-// Assume MotionLink is imported or defined elsewhere
-const MotionLink = motion.a; // Placeholder for your component
 type ProjectCardProps = {
   title: string;
   desc: string;
-  tech: string[]; // <-- allow array of strings
+  tech: string[];
 };
-const ProjectCard = ({ title, desc, tech = [] }: ProjectCardProps) => {
-  // Add a return statement, which was missing in your original code
+
+const ProjectCard = ({ title, desc, tech }: ProjectCardProps) => {
   return (
     <motion.div
-      whileHover={{ scale: 1.05, y: -5 }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      whileHover={{ y: -4 }}
+      transition={{ duration: 0.25, ease: "easeOut" }}
+      className="h-full"
     >
       <div
-        className="bg-white/10 border border-white/50 backdrop-blur rounded-lg p-6 hover:shadow-2xl hover:border-red-500/50 transition-shadow h-full mx-4 md:m-0"
+        className="
+          h-full rounded-2xl
+          bg-surface
+          border border-border
+          p-6
+          flex flex-col
+          justify-between
+          transition
+        "
       >
-        <div className="h-1 w-10 bg-gradient-to-r from-red-600 to-red-400 mb-4 rounded"></div>
-        <h3 className="text-xl font-semibold mb-3">{title}</h3>
-        <p className="text-white/80 mb-4">{desc}</p>
-        
-        {/* Map over the tech array to dynamically create tags */}
-        <div className="flex flex-wrap gap-2 mb-4">
-          {tech.map((techName) => (
-            <span
-              key={techName} // Use the tech name as a unique key
-              className="bg-red-600/20 text-red-400 text-xs font-medium px-2 py-1 rounded"
-            >
-              {techName}
-            </span>
-          ))}
+        {/* Header */}
+        <div>
+          <h3 className="text-xl font-semibold mb-3 text-foreground">
+            {title}
+          </h3>
+
+          <p className="text-sm leading-relaxed text-foreground-muted mb-4">
+            {desc}
+          </p>
         </div>
 
-        <MotionLink
-          whileTap={{ scale: 0.9 }}
+        {/* Tech tags */}
+        {tech.length > 0 && (
+          <div className="flex flex-wrap gap-2 mb-5">
+            {tech.map((item) => (
+              <span
+                key={item}
+                className="
+                  text-xs font-medium
+                  px-2.5 py-1
+                  rounded-full
+                  bg-surface-soft
+                  text-foreground-muted
+                  border border-border
+                "
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        )}
+
+        {/* CTA */}
+        <motion.a
           href="/projects"
-          className="inline-block bg-red-500 text-white font-semibold text-sm rounded-xl px-5 py-2 transition hover:bg-red-600"
+          whileTap={{ scale: 0.97 }}
+          className="
+            mt-auto inline-flex items-center justify-center
+            rounded-xl
+            px-4 py-2
+            text-sm font-medium
+            bg-background
+            border border-border
+            text-foreground
+            hover:bg-surface
+            transition
+          "
         >
-          View Projects
-        </MotionLink>
+          View Project
+        </motion.a>
       </div>
     </motion.div>
   );

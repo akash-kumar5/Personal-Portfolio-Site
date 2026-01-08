@@ -14,11 +14,15 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Akash | Portfolio",
+export const metadata = {
+  title: {
+  default: "Akash - Building Intelligent Systems",
+  template: "%s - Akash",
+},
   description:
-    "Showcasing my work in finance tech, web, and mobile development.",
+    "Designing end-to-end systems for finance, law, and automation.",
 };
+
 
 export default function RootLayout({
   children,

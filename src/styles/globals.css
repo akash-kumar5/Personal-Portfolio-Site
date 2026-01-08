@@ -1,31 +1,62 @@
 @import "tailwindcss";
 
+/* =========================
+   Design Tokens
+   ========================= */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --font-sans : var(--font-geist-sans);
-  --font-mono : var(--font-geist-mono);
+  /* Light mode (default) */
+  --background: #FFF2EB;
+  --surface: #FFE8CD;
+  --surface-soft: #FFDCDC;
+  --accent: #FFD6BA;
+
+  --foreground: #1E1E1E;
+  --foreground-muted: #4A4A4A;
+
+  --border: rgba(0, 0, 0, 0.06);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-surface: var(--surface);
+  --color-surface-soft: var(--surface-soft);
+  --color-accent: var(--accent);
+  --color-border: var(--border);
+
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* =========================
+   Dark Mode (intentional)
+   ========================= */
+
+.dark {
+  --background: #0F0F0F;
+  --surface: #171717;
+  --surface-soft: #1E1E1E;
+
+  --foreground: #EDEDED;
+  --foreground-muted: #A1A1A1;
+
+  --accent: rgba(255, 214, 186, 0.15);
+  --border: rgba(255, 255, 255, 0.08);
 }
+
+/* =========================
+   Base Styles
+   ========================= */
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  font-family: var(--font-sans);
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -35,72 +66,77 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   line-height: 1.75;
+  color: var(--foreground-muted);
 }
 
-@keyframes gradientShift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-.bg-animated-gradient {
-  background-size: 200% 200%;
-  animation: gradientShift 10s ease infinite;
+/* =========================
+   Motion (minimal & calm)
+   ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 
+/* Subtle float (use sparingly, hero only) */
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-4px); }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
 }
+
 .animate-float {
-  animation: float 3s ease-in-out infinite;
+  animation: float 4s ease-in-out infinite;
 }
 
-#tsparticles {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
+/* =========================
+   Borders & Accents
+   ========================= */
 
+/* Quiet glow — ONLY for focused elements */
 @keyframes glowBorder {
-  0% {
-    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.3);
-    opacity: 0.4;
+  0%, 100% {
+    box-shadow: 0 0 0 0 var(--accent);
+    opacity: 0.15;
   }
   50% {
-    box-shadow: 0 0 20px 4px rgba(255, 255, 255, 0.781);
-    opacity: 0.8;
-  }
-  100% {
-    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.403);
-    opacity: 0.4;
+    box-shadow: 0 0 10px 1px var(--accent);
+    opacity: 0.3;
   }
 }
 
 .animate-glow {
-  animation: glowBorder 2s infinite ease-in-out;
+  animation: glowBorder 3s ease-in-out infinite;
 }
 
-
-@keyframes borderAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 200% 50%;
-  }
+/* Reworked border magic (much calmer) */
+@keyframes borderShift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 150% 50%; }
 }
 
 .animate-borderMagic {
-  background: linear-gradient(90deg, rgba(255,255,255,0.8), rgba(255,255,255,0) 50%, rgba(255,255,255,0.8));
-  background-size: 200% 200%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent),
+    transparent
+  );
+  background-size: 150% 100%;
   border-radius: 1rem;
-  mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  -webkit-mask-composite: destination-out;
-  animation: borderAnimation 3s linear infinite;
+  animation: borderShift 6s linear infinite;
+}
+
+/* =========================
+   Particles (scoped utility)
+   ========================= */
+
+/* Use ONLY inside a wrapper, not globally */
+.particles-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  z-index: -1;
+  pointer-events: none;
 }
