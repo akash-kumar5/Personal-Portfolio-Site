@@ -1,10 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Metadata } from "next";
-export const metadata: Metadata = {
-  title: "Contact",
-};
+
 export default function ContactPage() {
   return (
     <main className="min-h-screen px-6 py-20 flex items-start justify-center">
