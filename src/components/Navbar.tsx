@@ -1,158 +1,124 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect, useRef } from "react";
-import { Menu, X, Download, ChevronDown } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
 
-export const Navbar = () => {
-  const [openDrawer, setOpenDrawer] = useState(false);
-  const [showDropdown, setShowDropdown] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+export function Navbar() {
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
 
-  // Close dropdown on outside click
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
-        setShowDropdown(false);
-      }
-    }
-    if (showDropdown) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [showDropdown]);
+  const navLink = (href: string) =>
+    `transition ${
+      pathname === href
+        ? "text-foreground font-medium border-b-2 border-foreground pb-0.5"
+        : "text-foreground-muted hover:text-foreground"
+    }`;
 
   return (
-    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-6xl rounded-2xl bg-surface/80 backdrop-blur-md border border-border px-6 py-3 flex items-center justify-between">
-      {/* Name */}
-      <Link href="/" className="font-semibold tracking-tight">
-        Akash Kumar
-      </Link>
-
-      {/* Desktop */}
-      <div className="hidden md:flex items-center gap-8 text-sm font-medium">
-        <Link href="/projects" className="text-foreground-muted hover:text-foreground transition">
-          Projects
-        </Link>
-        <Link href="/about" className="text-foreground-muted hover:text-foreground transition">
-          About
+    <header className="sticky top-0 z-50 bg-background/80 backdrop-blur border-b border-border">
+      <nav className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
+        {/* Brand */}
+        <Link href="/" className="font-semibold tracking-tight">
+          Akash Kumar
         </Link>
 
-        {/* Connect */}
-        <div ref={dropdownRef} className="relative">
-          <button
-            onClick={() => setShowDropdown((v) => !v)}
-            className="flex items-center gap-1 text-foreground-muted hover:text-foreground transition"
-          >
-            Connect <ChevronDown size={14} />
-          </button>
-
-          {showDropdown && (
-            <div className="absolute right-0 mt-2 w-40 rounded-xl bg-surface border border-border shadow-lg overflow-hidden">
-              <a
-                href="https://github.com/akash-kumar5"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block px-4 py-2 text-sm hover:bg-surface-soft transition"
-              >
-                GitHub
-              </a>
-              <a
-                href="https://linkedin.com/in/-akash-kumar"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block px-4 py-2 text-sm hover:bg-surface-soft transition"
-              >
-                LinkedIn
-              </a>
-              <a
-                href="mailto:akashsingh4152@gmail.com"
-                className="block px-4 py-2 text-sm hover:bg-surface-soft transition"
-              >
-                Email
-              </a>
-            </div>
-          )}
-        </div>
-
-        {/* Resume */}
-        <a
-          href="/Akash_Kumar_Resume.pdf"
-          download
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 rounded-xl px-4 py-2 border border-border bg-background hover:bg-surface transition text-sm"
-        >
-          <Download size={14} /> Resume
-        </a>
-      </div>
-
-      {/* Mobile */}
-      <button
-        className="md:hidden"
-        onClick={() => setOpenDrawer(!openDrawer)}
-        aria-label="Toggle menu"
-      >
-        {openDrawer ? <X size={20} /> : <Menu size={20} />}
-      </button>
-
-      {/* Mobile drawer */}
-      {openDrawer && (
-        <div className="absolute top-16 right-4 w-48 rounded-xl bg-surface border border-border shadow-lg p-4 flex flex-col gap-4 md:hidden">
-          <Link
-            href="/projects"
-            onClick={() => setOpenDrawer(false)}
-            className="text-sm text-foreground-muted hover:text-foreground"
-          >
+        {/* Desktop nav */}
+        <div className="hidden md:flex items-center gap-8 text-sm">
+          <Link href="/projects" className={navLink("/projects")}>
             Projects
           </Link>
-          <Link
-            href="/about"
-            onClick={() => setOpenDrawer(false)}
-            className="text-sm text-foreground-muted hover:text-foreground"
-          >
+          <Link href="/about" className={navLink("/about")}>
             About
           </Link>
-
-          <div className="pt-2 border-t border-border flex flex-col gap-2">
-            <a
-              href="https://github.com/akash-kumar5"
-              target="_blank"
-              className="text-sm hover:text-foreground"
-            >
-              GitHub
-            </a>
-            <a
-              href="https://linkedin.com/in/-akash-kumar"
-              target="_blank"
-              className="text-sm hover:text-foreground"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="mailto:akashsingh4152@gmail.com"
-              className="text-sm hover:text-foreground"
-            >
-              Email
-            </a>
-          </div>
+          <Link href="/contact" className={navLink("/contact")}>
+            Contact
+          </Link>
 
           <a
-            href="/Akash_Kumar_Resume.pdf"
-            download
+            href="https://linkedin.com/in/-akash-kumar"
             target="_blank"
-            onClick={() => setOpenDrawer(false)}
-            className="mt-2 flex items-center gap-2 justify-center rounded-xl border border-border bg-background px-3 py-2 text-sm"
+            className="text-foreground-muted hover:text-foreground transition"
           >
-            <Download size={14} /> Resume
+            LinkedIn
+          </a>
+          <a
+            href="https://github.com/akash-kumar5"
+            target="_blank"
+            className="text-foreground-muted hover:text-foreground transition"
+          >
+            GitHub
+          </a>
+
+          {/* Resume CTA */}
+          <a
+            href="/Akash_Kumar_Resume.pdf"
+            target="_blank"
+            className="ml-4 rounded-full bg-foreground text-background px-5 py-2 text-sm font-medium hover:opacity-90 transition"
+          >
+            Resume
           </a>
         </div>
+
+        {/* Mobile hamburger */}
+        {/* Mobile hamburger */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="md:hidden flex flex-col justify-center gap-1.5"
+          aria-label="Toggle menu"
+        >
+          <span
+            className={`h-[2px] w-5 bg-foreground transition-transform ${
+              open ? "translate-y-[6px] rotate-45" : ""
+            }`}
+          />
+          <span
+            className={`h-[2px] w-5 bg-foreground transition-opacity ${
+              open ? "opacity-0" : "opacity-100"
+            }`}
+          />
+          <span
+            className={`h-[2px] w-5 bg-foreground transition-transform ${
+              open ? "-translate-y-[6px] -rotate-45" : ""
+            }`}
+          />
+        </button>
+      </nav>
+
+      {/* Mobile menu */}
+      {open && (
+        <div className="md:hidden border-t border-border bg-background">
+          <div className="px-6 py-5 flex flex-col gap-4 text-sm">
+            <Link href="/projects" onClick={() => setOpen(false)}>
+              Projects
+            </Link>
+            <Link href="/about" onClick={() => setOpen(false)}>
+              About
+            </Link>
+            <Link href="/contact" onClick={() => setOpen(false)}>
+              Contact
+            </Link>
+
+            <div className="pt-3 border-t border-border flex flex-col gap-3">
+              <a href="https://linkedin.com/in/-akash-kumar" target="_blank">
+                LinkedIn
+              </a>
+              <a href="https://github.com/akash-kumar5" target="_blank">
+                GitHub
+              </a>
+            </div>
+
+            <a
+              href="/Akash_Kumar_Resume.pdf"
+              target="_blank"
+              onClick={() => setOpen(false)}
+              className="mt-3 rounded-lg bg-foreground text-background px-4 py-2 text-center font-medium"
+            >
+              Resume
+            </a>
+          </div>
+        </div>
       )}
-    </nav>
+    </header>
   );
-};
+}

@@ -2,11 +2,12 @@ import { motion } from "framer-motion";
 
 type ProjectCardProps = {
   title: string;
+  id:string;
   desc: string;
   tech: string[];
 };
 
-const ProjectCard = ({ title, desc, tech }: ProjectCardProps) => {
+const ProjectCard = ({ title,id, desc, tech }: ProjectCardProps) => {
   return (
     <motion.div
       whileHover={{ y: -4 }}
@@ -58,7 +59,7 @@ const ProjectCard = ({ title, desc, tech }: ProjectCardProps) => {
 
         {/* CTA */}
         <motion.a
-          href="/projects"
+          href={`/projects/#${id}`}
           whileTap={{ scale: 0.97 }}
           className="
             mt-auto inline-flex items-center justify-center

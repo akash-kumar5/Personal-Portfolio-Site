@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 const projects = [
   {
     name: "Lexx",
+    id: "lexx",
     category: "Legal AI",
     description:
       "Citation-grounded legal assistant for Indian law using retrieval-augmented generation. Focused on correctness, traceability, and domain constraints.",
@@ -15,6 +16,7 @@ const projects = [
   },
   {
     name: "Crypto Market Regime Classifier",
+    id: "regime",
     description:
       "Live market intelligence system that classifies crypto market regimes (trend, range, squeeze) using multi-timeframe data and probabilistic models.",
     link: "https://github.com/akash-kumar5/CryptoMarket_Regime_Classifier",
@@ -24,6 +26,7 @@ const projects = [
   },
   {
     name: "Dazai",
+    id: "dazai",
     category: "Trading Research System",
     description:
       "Market-regime aware trading research system with backtesting, analytics, and risk-aware experimentation across crypto and equities.",
@@ -34,6 +37,7 @@ const projects = [
   },
   {
     name: "Zenin",
+    id: "zenin",
     category: "Automatic Personal Finance Tracker",
     description:
       "Mobile-first finance product focused on understanding spending behavior, savings patterns, and long-term financial habits.",
@@ -48,6 +52,7 @@ const projects = [
   },
   {
     name: "RentKr",
+    id: "rentkr",
     category: "Rental Platform Webapp",
     description:
       "MERN-based marketplace enabling peer-to-peer rentals with scalable media storage and simple discovery.",
@@ -79,89 +84,94 @@ export default function ProjectPage() {
         {/* Projects */}
         <div className="space-y-20">
           {projects.map((project, index) => (
-            <motion.article
-              key={project.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
-              viewport={{ once: true }}
-              className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
-            >
-              {/* Text */}
-              <div>
-                <h2 className="mb-3 leading-tight">
-                  <span className="block text-[32px] font-semibold">
-                    {project.name}
-                  </span>
-                  <span className="block text-lg font-normal text-foreground-muted">
-                    {project.category}
-                  </span>
-                </h2>
-
-                <p className="text-base text-foreground-muted leading-relaxed mb-4">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tech.map((t) => (
-                    <span
-                      key={t}
-                      className="text-xs px-2 py-1 rounded-full bg-surface border border-border text-foreground-muted"
-                    >
-                      {t}
+            <div key={project.id}>
+              <motion.article
+                key={project.name}
+                id={project.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                viewport={{ once: true }}
+                className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center scroll-mt-32"
+              >
+                {/* Text */}
+                <div>
+                  <h2 className="mb-3 leading-tight">
+                    <span className="block text-[32px] font-semibold">
+                      {project.name}
                     </span>
-                  ))}
+                    <span className="block text-lg font-normal text-foreground-muted">
+                      {project.category}
+                    </span>
+                  </h2>
+
+                  <p className="text-base text-foreground-muted leading-relaxed mb-4">
+                    {project.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tech.map((t) => (
+                      <span
+                        key={t}
+                        className="text-xs px-2 py-1 rounded-full bg-surface border border-border text-foreground-muted"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+
+                  <p className="text-base text-foreground-muted mb-6">
+                    <span className=" font-medium text-foreground">
+                      System focus:
+                    </span>{" "}
+                    <span className="italic">{project.focus}</span>
+                  </p>
+
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block text-sm font-medium underline underline-offset-4 hover:text-foreground transition"
+                  >
+                    View on GitHub →
+                  </a>
                 </div>
 
-                <p className="text-base text-foreground-muted mb-6">
-                  <span className=" font-medium text-foreground">
-                    System focus:
-                  </span>{" "}
-                  <span className="italic">{project.focus}</span>
-                </p>
-
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block text-sm font-medium underline underline-offset-4 hover:text-foreground transition"
-                >
-                  View on GitHub →
-                </a>
-              </div>
-
-              {/* Image */}
-              <div className="rounded-2xl border border-border bg-surface p-3">
-                <div className="aspect-[16/9] w-full overflow-hidden rounded-xl">
-                  {project.images.length > 1 ? (
-                    <div className="grid grid-cols-3 gap-2 h-full">
-                      {project.images.map((img) => (
-                        <img
-                          key={img}
-                          src={img}
-                          className="object-cover w-full h-full rounded-lg"
-                          alt=""
-                        />
-                      ))}
-                    </div>
-                  ) : (
-                    <img
-                      src={project.images[0]}
-                      className="object-cover w-full h-full"
-                      alt=""
-                    />
-                  )}
+                {/* Image */}
+                <div className="rounded-2xl border border-border bg-surface p-3">
+                  <div className="aspect-[16/9] w-full overflow-hidden rounded-xl">
+                    {project.images.length > 1 ? (
+                      <div className="grid grid-cols-3 gap-2 h-full">
+                        {project.images.map((img) => (
+                          <img
+                            key={img}
+                            src={img}
+                            className="object-cover w-full h-full rounded-lg"
+                            alt=""
+                          />
+                        ))}
+                      </div>
+                    ) : (
+                      <img
+                        src={project.images[0]}
+                        className="object-cover w-full h-full"
+                        alt=""
+                      />
+                    )}
+                  </div>
                 </div>
-              </div>
-              <div className="h-px bg-border my-3" />
-            </motion.article>
+              </motion.article>
+              {index !== projects.length - 1 && (
+                <div className="h-px bg-border my-16" />
+              )}
+            </div>
           ))}
         </div>
         <div className="mt-3 max-w-2xl">
           <p className="text-foreground-muted leading-relaxed">
-            If you&apos;re interested in how these systems were designed, or want to
-            discuss a problem with similar constraints <br /> I&apos;m open to a
-            conversation.
+            If you&apos;re interested in how these systems were designed, or
+            want to discuss a problem with similar constraints <br /> I&apos;m
+            open to a conversation.
           </p>
 
           <a

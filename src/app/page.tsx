@@ -88,6 +88,7 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           <ProjectCard
             title="Dazai"
+            id="dazai"
             desc="Market-regime aware trading research system with backtesting,
             analytics, and risk-aware experimentation."
             tech={["Python", "ML", "Backtesting"]}
@@ -95,6 +96,7 @@ export default function Home() {
 
           <ProjectCard
             title="Lexx"
+            id="lexx"
             desc="Legal AI using RAG to generate citation-grounded answers
             over Indian law documents."
             tech={["Next.js", "FastAPI", "RAG", "LLMs"]}
@@ -102,6 +104,7 @@ export default function Home() {
 
           <ProjectCard
             title="Zenin"
+            id="zenin"
             desc="Personal finance product focused on understanding
             spending behavior and savings patterns."
             tech={["React Native", "Firebase"]}

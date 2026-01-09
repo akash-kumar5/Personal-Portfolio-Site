@@ -3,6 +3,9 @@
 /* =========================
    Design Tokens
    ========================= */
+html {
+  scroll-behavior: smooth;
+}
 
 :root {
   /* Light mode (default) */
