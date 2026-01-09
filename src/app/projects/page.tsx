@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    title: "Lexx - Legal AI",
+    name: "Lexx",
+    category: "Legal AI",
     description:
       "Citation-grounded legal assistant for Indian law using retrieval-augmented generation. Focused on correctness, traceability, and domain constraints.",
     focus: "Retrieval correctness under legal constraints",
@@ -13,7 +14,17 @@ const projects = [
     images: ["/images/lexxui.jpg"],
   },
   {
-    title: "Dazai - Trading Research System",
+    name: "Crypto Market Regime Classifier",
+    description:
+      "Live market intelligence system that classifies crypto market regimes (trend, range, squeeze) using multi-timeframe data and probabilistic models.",
+    link: "https://github.com/akash-kumar5/CryptoMarket_Regime_Classifier",
+    images: ["/images/regime-ui.png"], // optional, can reuse chart screenshot
+    focus: "Real-time regime detection under noisy market conditions",
+    tech: ["Python", "LSTM", "HMM", "Time-series", "Live Pipeline"],
+  },
+  {
+    name: "Dazai",
+    category: "Trading Research System",
     description:
       "Market-regime aware trading research system with backtesting, analytics, and risk-aware experimentation across crypto and equities.",
     focus: "Decision-making under noisy market regimes",
@@ -22,16 +33,8 @@ const projects = [
     images: ["/images/dazaiui.png"],
   },
   {
-  title: "Crypto Market Regime Classifier",
-  description:
-    "Live market intelligence system that classifies crypto market regimes (trend, range, squeeze) using multi-timeframe data and probabilistic models.",
-  link: "https://github.com/akash-kumar5/CryptoMarket_Regime_Classifier",
-  images: ["/images/regime-ui.png"], // optional, can reuse chart screenshot
-  focus: "Real-time regime detection under noisy market conditions",
-  tech: ["Python", "LSTM", "HMM", "Time-series", "Live Pipeline"],
-},
-  {
-    title: "Zenin - Personal Finance",
+    name: "Zenin",
+    category: "Automatic Personal Finance Tracker",
     description:
       "Mobile-first finance product focused on understanding spending behavior, savings patterns, and long-term financial habits.",
     focus: "Behavioral signals from financial data",
@@ -44,7 +47,8 @@ const projects = [
     ],
   },
   {
-    title: "RentKr - Rental Platform",
+    name: "RentKr",
+    category: "Rental Platform Webapp",
     description:
       "MERN-based marketplace enabling peer-to-peer rentals with scalable media storage and simple discovery.",
     focus: "End-to-end product delivery",
@@ -76,7 +80,7 @@ export default function ProjectPage() {
         <div className="space-y-20">
           {projects.map((project, index) => (
             <motion.article
-              key={project.title}
+              key={project.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
@@ -85,15 +89,16 @@ export default function ProjectPage() {
             >
               {/* Text */}
               <div>
-                <h2
-                  className={`font-semibold mb-3 ${
-                    index === 0 ? "text-3xl" : "text-2xl"
-                  }`}
-                >
-                  {project.title}
+                <h2 className="mb-3 leading-tight">
+                  <span className="block text-[32px] font-semibold">
+                    {project.name}
+                  </span>
+                  <span className="block text-lg font-normal text-foreground-muted">
+                    {project.category}
+                  </span>
                 </h2>
 
-                <p className="text-foreground-muted leading-relaxed mb-4">
+                <p className="text-base text-foreground-muted leading-relaxed mb-4">
                   {project.description}
                 </p>
 
@@ -108,11 +113,11 @@ export default function ProjectPage() {
                   ))}
                 </div>
 
-                <p className="text-sm text-foreground-muted mb-6">
-                  <span className="font-medium text-foreground">
+                <p className="text-base text-foreground-muted mb-6">
+                  <span className=" font-medium text-foreground">
                     System focus:
                   </span>{" "}
-                  {project.focus}
+                  <span className="italic">{project.focus}</span>
                 </p>
 
                 <a
@@ -148,8 +153,23 @@ export default function ProjectPage() {
                   )}
                 </div>
               </div>
+              <div className="h-px bg-border my-3" />
             </motion.article>
           ))}
+        </div>
+        <div className="mt-3 max-w-2xl">
+          <p className="text-foreground-muted leading-relaxed">
+            If you&apos;re interested in how these systems were designed, or want to
+            discuss a problem with similar constraints <br /> I&apos;m open to a
+            conversation.
+          </p>
+
+          <a
+            href="/contact"
+            className="inline-flex items-center gap-1 mt-4 text-lg font-medium underline underline-offset-4 hover:text-foreground transition"
+          >
+            Get in touch →
+          </a>
         </div>
       </motion.section>
     </main>
