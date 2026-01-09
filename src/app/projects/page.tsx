@@ -1,7 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Projects",
+  description:
+    "Systems built around decision-making, correctness, and real-world constraints.",
+};
 const projects = [
   {
     title: "Lexx - Legal AI",

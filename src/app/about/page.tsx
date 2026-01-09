@@ -2,6 +2,9 @@
 
 import { motion } from "framer-motion";
 
+export const metadata={
+  title:"About",
+}
 type SkillGroup = {
   title: string;
   description: string;
