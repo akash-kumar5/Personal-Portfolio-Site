@@ -67,7 +67,7 @@ export default function ProjectPage() {
         <header className="mb-20 text-center">
           <h1 className="text-4xl font-semibold mb-4">Projects</h1>
           <p className="text-foreground-muted max-w-2xl mx-auto">
-            A selection of systems I’ve built - focused on decision-making,
+            A selection of systems I&apos;ve built - focused on decision-making,
             correctness, and real-world constraints.
           </p>
         </header>

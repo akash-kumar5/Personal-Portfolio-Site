@@ -55,7 +55,7 @@ export default function AboutPage() {
           </p>
 
           <p className="mt-4 text-lg text-foreground-muted leading-relaxed">
-            I’m most interested in problems where decisions matter, data is
+            I&apos;m most interested in problems where decisions matter, data is
             imperfect, and systems must explain themselves - not just output an
             answer.
           </p>
@@ -140,8 +140,8 @@ export default function AboutPage() {
         {/* Quiet CTA */}
         <div className="mt-12 max-w-3xl">
           <p className="text-foreground-muted leading-relaxed">
-            If you’re working on a problem where decisions, constraints, and
-            correctness matter, I’m open to thoughtful conversations.
+            If you&apos;re working on a problem where decisions, constraints, and
+            correctness matter, I&apos;m open to thoughtful conversations.
           </p>
 
           <motion.a
