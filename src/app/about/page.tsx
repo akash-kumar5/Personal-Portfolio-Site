@@ -37,7 +37,7 @@ const SKILL_GROUPS: SkillGroup[] = [
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-background text-foreground px-6 py-24">
+    <main className="min-h-screen bg-background text-foreground px-6 py-12">
       <motion.section
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}

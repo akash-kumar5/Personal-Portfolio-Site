@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import ThemeToggle from "./ThemeToggle";
 
 export function Navbar() {
   const pathname = usePathname();
@@ -49,6 +50,10 @@ export function Navbar() {
           >
             GitHub
           </a>
+          <div className="hidden md:flex items-center gap-6">
+  <ThemeToggle />
+  {/* <ResumeButton /> */}
+</div>
 
           {/* Resume CTA */}
           <a
@@ -117,6 +122,11 @@ export function Navbar() {
               Resume
             </a>
           </div>
+          <div className="hidden md:flex items-center gap-6">
+  <ThemeToggle />
+  {/* <ResumeButton /> */}
+</div>
+
         </div>
       )}
     </header>

@@ -43,14 +43,14 @@ export default function Home() {
             whileTap={{ scale: 0.97 }}
             className="px-6 py-3 rounded-2xl bg-accent text-foreground font-medium border border-border transition"
           >
-            View Work
+            View Work →
           </MotionLink>
 
           <MotionLink
             href="/about"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
-            className="px-6 py-3 rounded-2xl border border-border text-foreground-muted transition"
+            className="px-6 py-3 rounded-2xl border-2 border-border text-foreground-muted transition"
           >
             About Me
           </MotionLink>

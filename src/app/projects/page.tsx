@@ -138,7 +138,7 @@ export default function ProjectPage() {
                 </div>
 
                 {/* Image */}
-                <div className="rounded-2xl border border-border bg-surface p-3">
+                <div className="rounded-2xl border border-border bg-surface p-2">
                   <div className="aspect-[16/9] w-full overflow-hidden rounded-xl">
                     {project.images.length > 1 ? (
                       <div className="grid grid-cols-3 gap-2 h-full">
