@@ -1,5 +1,6 @@
 "use client";
 
+import HeroTyping from "@/components/HeroTyping";
 import { ParticlesBackground } from "@/components/ParticlesBackground";
 import ProjectCard from "@/components/ProjectCard";
 import TechMarquee from "@/components/TechMarquee";
@@ -10,47 +11,51 @@ export default function Home() {
   const MotionLink = motion(Link);
 
   return (
-    <main className="min-h-screen flex flex-col items-center bg-background text-foreground">
-      {/* background */}
-      <div className="fixed inset-0 -z-10">
-        <ParticlesBackground />
-      </div>
-
+    <main className="min-h-screen flex flex-col items-center text-foreground">
+      {/* HERO */}
       {/* HERO */}
       <motion.section
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="min-h-screen flex flex-col justify-center items-center text-center px-6"
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="relative min-h-[90vh] w-full flex flex-col justify-center items-center text-center px-6 overflow-hidden hero-gradient"
       >
-        <h1 className="text-5xl lg:text-6xl font-semibold tracking-tight">
+        {/* background gradient */}
+       
+
+        {/* Main headline */}
+        <h1 className="text-5xl lg:text-7xl font-semibold tracking-tight leading-tight text-foreground">
           I Design Systems That
-          <br />
-          <span className="text-foreground-muted">
-            Real-World Decisions Depend On
-          </span>
         </h1>
 
-        <p className="mt-6 max-w-2xl text-lg text-foreground-muted leading-relaxed">
-          Designing end-to-end systems - from data and models
-          to APIs, interfaces, and real-world decisions.
+        {/* Typing line */}
+        <div className="mt-4 min-h-[2.5rem] lg:min-h-[3.5rem] flex items-center justify-center">
+          <HeroTyping />
+        </div>
+
+        {/* Sub headline */}
+        <p className="mt-8 max-w-2xl text-base lg:text-xl text-foreground-muted/80 leading-relaxed font-light">
+          A systems-first engineer building interpretable solutions for finance,
+          law, and automation - from data and models to APIs and production
+          interfaces.
         </p>
 
-        <div className="mt-10 flex gap-4">
+        {/* CTA buttons */}
+        <div className="mt-12 flex flex-col sm:flex-row gap-5">
           <MotionLink
             href="/projects"
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.97 }}
-            className="px-6 py-3 rounded-2xl bg-accent text-foreground font-medium border border-border transition"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="px-8 py-4 rounded-full bg-foreground text-background font-medium transition-all hover:shadow-lg hover:shadow-foreground/5"
           >
-            View Work →
+            View work →
           </MotionLink>
 
           <MotionLink
             href="/about"
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.97 }}
-            className="px-6 py-3 rounded-2xl border-2 border-border text-foreground-muted transition"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="px-8 py-4 rounded-full border text-foreground-muted hover:bg-surface-soft/50 transition-all"
           >
             About Me
           </MotionLink>
@@ -67,9 +72,9 @@ export default function Home() {
       >
         <h2 className="text-3xl font-semibold mb-4">About</h2>
         <p className="text-lg text-foreground-muted leading-relaxed">
-          I focus on building systems that reduce human effort —
-          from legal AI with citation-grounded retrieval
-          to market intelligence and trading research.
+          I focus on building systems that reduce human effort - from legal AI
+          with citation-grounded retrieval to market intelligence and trading
+          research.
         </p>
       </motion.section>
 

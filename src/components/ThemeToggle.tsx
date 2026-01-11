@@ -61,6 +61,8 @@ export default function ThemeToggle() {
       className="
     relative w-12 h-6 rounded-full
     border border-border
+    border-foreground
+    dark:border-foreground
     bg-surface
     transition-colors
     flex items-center

@@ -17,7 +17,9 @@ export function Navbar() {
     }`;
 
   return (
-    <header className="sticky top-0 z-50 bg-background/80 backdrop-blur border-b border-border">
+    <header className="sticky top-0 z-50 border-b border-border navbar-gradient">
+
+
       <nav className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
         {/* Brand */}
         <Link href="/" className="font-semibold tracking-tight">
@@ -51,9 +53,9 @@ export function Navbar() {
             GitHub
           </a>
           <div className="hidden md:flex items-center gap-6">
-  <ThemeToggle />
-  {/* <ResumeButton /> */}
-</div>
+            <ThemeToggle />
+       
+          </div>
 
           {/* Resume CTA */}
           <a
@@ -123,10 +125,9 @@ export function Navbar() {
             </a>
           </div>
           <div className="hidden md:flex items-center gap-6">
-  <ThemeToggle />
-  {/* <ResumeButton /> */}
-</div>
-
+            <ThemeToggle />
+            {/* <ResumeButton /> */}
+          </div>
         </div>
       )}
     </header>
