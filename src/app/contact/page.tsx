@@ -57,8 +57,16 @@ export default function ContactPage() {
       >
         {/* LEFT — visual anchor (replace div with image later) */}
         <div className="hidden lg:flex items-center justify-center">
-          <div className="w-[260px] h-[340px] bg-surface border border-border rounded-2xl flex items-center justify-center text-foreground-muted">
-            Headshot
+          <div className="relative w-[260px] h-[340px] rounded-2xl overflow-hidden border border-border bg-surface shadow-sm">
+            {/* Image */}
+            <img
+              src="/images/headshot1.png"
+              alt="Akash Kumar"
+              className="w-full h-full object-cover grayscale-[20%] contrast-[1.05]"
+            />
+
+            {/* Subtle overlay for consistency */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
           </div>
         </div>
 

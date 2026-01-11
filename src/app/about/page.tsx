@@ -45,21 +45,38 @@ export default function AboutPage() {
         className="mx-auto max-w-6xl"
       >
         {/* Header */}
-        <header className="mb-10 max-w-3xl">
-          <h1 className="text-4xl font-semibold mb-6">About</h1>
+        <header className="mb-10 max-w-4xl flex items-start gap-6">
+          {/* Headshot */}
+          <img
+            src="/images/me.png" // or your actual path
+            alt="Akash Kumar"
+            className=" mt-8 me-5   w-50 h-50
+      rounded-full
+      object-cover
+      border border-border
+      grayscale brightness-95 contrast-95
+      flex-shrink-0
+    "
+          />
 
-          <p className="text-lg text-foreground-muted leading-relaxed">
-            I focus on building systems that reduce human effort - from legal AI
-            with citation-grounded retrieval to market intelligence and trading
-            research.
-          </p>
+          {/* Text */}
+          <div>
+            <h1 className="text-4xl font-semibold mb-6">About</h1>
 
-          <p className="mt-4 text-lg text-foreground-muted leading-relaxed">
-            I&apos;m most interested in problems where decisions matter, data is
-            imperfect, and systems must explain themselves - not just output an
-            answer.
-          </p>
+            <p className="text-lg text-foreground-muted leading-relaxed">
+              I focus on building systems that reduce human effort – from legal
+              AI with citation-grounded retrieval to market intelligence and
+              trading research.
+            </p>
+
+            <p className="mt-4 text-lg text-foreground-muted leading-relaxed">
+              I&apos;m most interested in problems where decisions matter, data
+              is imperfect, and systems must explain themselves – not just
+              output an answer.
+            </p>
+          </div>
         </header>
+
         <hr className="my-9 border border-border max-w-4xl" />
 
         {/* Main layout */}
@@ -96,12 +113,11 @@ export default function AboutPage() {
           </aside>
           {/* Vertical divider (desktop only) */}
           <motion.div
-  initial={{ opacity: 0, scaleY: 0 }}
-  animate={{ opacity: 1, scaleY: 1 }}
-  transition={{ duration: 0.4, ease: "easeOut" }}
-  className="w-px bg-border h-full max-h-[480px]"
-/>
-
+            initial={{ opacity: 0, scaleY: 0 }}
+            animate={{ opacity: 1, scaleY: 1 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className="w-px bg-border h-full max-h-[480px]"
+          />
 
           {/* RIGHT - skills reframed */}
           <section className="lg:col-span-6 space-y-12">
@@ -116,18 +132,17 @@ export default function AboutPage() {
                 <div className="flex flex-wrap gap-2">
                   {group.skills.map((skill) => (
                     <motion.span
-  key={skill}
-  whileHover={{
-    y: -2,
-    borderColor: "rgba(0,0,0,0.15)",
-    color: "var(--foreground)",
-  }}
-  transition={{ duration: 0.15, ease: "easeOut" }}
-  className="px-3 py-1 rounded-full text-sm bg-surface border border-border text-foreground-muted cursor-default"
->
-  {skill}
-</motion.span>
-
+                      key={skill}
+                      whileHover={{
+                        y: -2,
+                        borderColor: "rgba(0,0,0,0.15)",
+                        color: "var(--foreground)",
+                      }}
+                      transition={{ duration: 0.15, ease: "easeOut" }}
+                      className="px-3 py-1 rounded-full text-sm bg-surface border border-border text-foreground-muted cursor-default"
+                    >
+                      {skill}
+                    </motion.span>
                   ))}
                 </div>
               </div>
@@ -140,29 +155,28 @@ export default function AboutPage() {
         {/* Quiet CTA */}
         <div className="mt-12 max-w-3xl">
           <p className="text-foreground-muted leading-relaxed">
-            If you&apos;re working on a problem where decisions, constraints, and
-            correctness matter, I&apos;m open to thoughtful conversations.
+            If you&apos;re working on a problem where decisions, constraints,
+            and correctness matter, I&apos;m open to thoughtful conversations.
           </p>
 
           <motion.a
-  href="/contact"
-  initial="rest"
-  whileHover="hover"
-  animate="rest"
-  className="inline-flex items-center gap-2 mt-4 text-lg font-medium underline underline-offset-5 hover:text-foreground transition"
->
-  <span>Get in touch</span>
-  <motion.span
-    variants={{
-      rest: { x: 0 },
-      hover: { x: 6 },
-    }}
-    transition={{ duration: 0.2, ease: "easeOut" }}
-  >
-    →
-  </motion.span>
-</motion.a>
-
+            href="/contact"
+            initial="rest"
+            whileHover="hover"
+            animate="rest"
+            className="inline-flex items-center gap-2 mt-4 text-lg font-medium underline underline-offset-5 hover:text-foreground transition"
+          >
+            <span>Get in touch</span>
+            <motion.span
+              variants={{
+                rest: { x: 0 },
+                hover: { x: 6 },
+              }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+            >
+              →
+            </motion.span>
+          </motion.a>
         </div>
       </motion.section>
     </main>
