@@ -1,7 +1,6 @@
 "use client";
 
 import HeroTyping from "@/components/HeroTyping";
-import { ParticlesBackground } from "@/components/ParticlesBackground";
 import ProjectCard from "@/components/ProjectCard";
 import TechMarquee from "@/components/TechMarquee";
 import { motion } from "framer-motion";

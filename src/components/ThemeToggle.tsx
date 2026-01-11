@@ -2,21 +2,6 @@
 
 // import { MoonIcon, SunIcon } from "lucide-react";
 import { useEffect, useState } from "react";
-function SunIcon() {
-  return (
-    <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
-      <circle cx="12" cy="12" r="5" fill="#FAFAF9" />
-    </svg>
-  );
-}
-
-function MoonIcon() {
-  return (
-    <svg width="12" height="12" viewBox="0 0 24 24" fill="#FAFAF9">
-      <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z" />
-    </svg>
-  );
-}
 
 export default function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
