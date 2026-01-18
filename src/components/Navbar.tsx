@@ -18,8 +18,6 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border navbar-gradient">
-
-
       <nav className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
         {/* Brand */}
         <Link href="/" className="font-semibold tracking-tight">
@@ -54,7 +52,6 @@ export function Navbar() {
           </a>
           <div className="hidden md:flex items-center gap-6">
             <ThemeToggle />
-       
           </div>
 
           {/* Resume CTA */}
@@ -69,27 +66,32 @@ export function Navbar() {
 
         {/* Mobile hamburger */}
         {/* Mobile hamburger */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden flex flex-col justify-center gap-1.5"
-          aria-label="Toggle menu"
-        >
-          <span
-            className={`h-[2px] w-5 bg-foreground transition-transform ${
-              open ? "translate-y-[6px] rotate-45" : ""
-            }`}
-          />
-          <span
-            className={`h-[2px] w-5 bg-foreground transition-opacity ${
-              open ? "opacity-0" : "opacity-100"
-            }`}
-          />
-          <span
-            className={`h-[2px] w-5 bg-foreground transition-transform ${
-              open ? "-translate-y-[6px] -rotate-45" : ""
-            }`}
-          />
-        </button>
+        {/* Mobile right controls */}
+        <div className="md:hidden flex items-center gap-3">
+          <ThemeToggle />
+
+          <button
+            onClick={() => setOpen(!open)}
+            className="flex flex-col justify-center gap-1.5"
+            aria-label="Toggle menu"
+          >
+            <span
+              className={`h-[2px] w-5 bg-foreground transition-transform ${
+                open ? "translate-y-[6px] rotate-45" : ""
+              }`}
+            />
+            <span
+              className={`h-[2px] w-5 bg-foreground transition-opacity ${
+                open ? "opacity-0" : "opacity-100"
+              }`}
+            />
+            <span
+              className={`h-[2px] w-5 bg-foreground transition-transform ${
+                open ? "-translate-y-[6px] -rotate-45" : ""
+              }`}
+            />
+          </button>
+        </div>
       </nav>
 
       {/* Mobile menu */}
