@@ -17,7 +17,7 @@ export default function Home() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="relative min-h-[90vh] w-full flex flex-col justify-center items-center text-center px-6 overflow-hidden hero-gradient"
+        className="relative min-h-[91vh] w-full flex flex-col justify-center items-center text-center px-6 overflow-hidden hero-gradient"
       >
         {/* background gradient */}
        

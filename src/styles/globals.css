@@ -145,48 +145,54 @@ p {
 }
 .navbar-gradient {
   background:
+    /* warm accent glow — left top */
     radial-gradient(
-      600px circle at 20% 40%,
-      rgba(255, 214, 186, 0.45),
-      transparent 60%
-    ),
-    radial-gradient(
-      500px circle at 80% 30%,
-      rgba(255, 232, 205, 0.35),
+      450px circle at 10% 20%,
+      rgba(255, 214, 186, 0.6),
       transparent 65%
     ),
-    linear-gradient(
-      180deg,
-      rgba(255, 242, 235, 0.92),
-      rgba(255, 242, 235, 0.82)
-    );
 
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+    /* soft surface glow — right bottom */
+    radial-gradient(
+      600px circle at 90% 80%,
+      rgba(255, 232, 205, 0.55),
+      transparent 70%
+    ),
+
+    /* base fill */
+    #fff2eb;
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
 }
+
 
 
 .dark .navbar-gradient {
   background:
+    /* muted accent — left top */
     radial-gradient(
-      600px circle at 20% 40%,
-      rgba(255, 214, 186, 0.08),
-      transparent 60%
-    ),
-    radial-gradient(
-      500px circle at 80% 30%,
-      rgba(255, 214, 186, 0.05),
+      450px circle at 10% 20%,
+      rgba(255, 214, 186, 0.12),
       transparent 65%
     ),
-    linear-gradient(
-      180deg,
-      rgba(30, 8, 50, 0.92),
-      rgba(8, 33, 59, 0.429)
-    );
 
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+    /* depth anchor — right bottom */
+    radial-gradient(
+      600px circle at 90% 80%,
+      rgba(255, 255, 255, 0.04),
+      transparent 70%
+    ),
+
+    #0f0f0f;
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
 }
+
+
 
 .dark .hero-gradient {
   background:
@@ -204,14 +210,22 @@ p {
 
 .hero-gradient {
   background:
+    /* accent light — top left */
     radial-gradient(
-      1000px circle at 15% 35%,
-      rgba(255, 214, 186, 0.238),
+      1200px circle at 12% 28%,
+      rgba(236, 179, 142, 0.7),
+      transparent 65%
+    ),
+
+    /* surface-soft glow — bottom right */
+    radial-gradient(
+      1100px circle at 88% 82%,
+      rgba(190, 125, 125, 0.849),
       transparent 60%
     ),
-    linear-gradient(
-      180deg,
-      #fce7dc 0%,
-      #ffe8dc 100%
-    );
+
+    /* base background */
+    #fff2eb;
+
+  min-height: 91vh;
 }
