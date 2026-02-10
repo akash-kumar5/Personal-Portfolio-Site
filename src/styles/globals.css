@@ -9,15 +9,24 @@ html {
 
 :root {
   /* Light mode (default) */
-  --background: #FFF2EB;
+  /* --background: #FFF2EB;
   --surface: #FFE8CD;
   --surface-soft: #FFDCDC;
-  --accent: #FFD6BA;
+  --accent: #FFD6BA; */
+  --background: #0F0F0F;
+  --surface: #171717;
+  --surface-soft: #1E1E1E;
 
-  --foreground: #1E1E1E;
-  --foreground-muted: #4A4A4A;
+  --foreground: #EDEDED;
+  --foreground-muted: #A1A1A1;
 
-  --border: rgba(0, 0, 0, 0.06);
+  --accent: rgba(255, 214, 186, 0.15);
+  --border: rgba(255, 255, 255, 0.08);
+
+  /* --foreground: #1E1E1E;
+  --foreground-muted: #4A4A4A; */
+
+  /* --border: rgba(0, 0, 0, 0.06); */
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -143,7 +152,7 @@ p {
   z-index: -1;
   pointer-events: none;
 }
-.navbar-gradient {
+.dark .navbar-gradient {
   background:
     /* warm accent glow — left top */
     radial-gradient(
@@ -169,7 +178,7 @@ p {
 
 
 
-.dark .navbar-gradient {
+.navbar-gradient {
   background:
     /* muted accent — left top */
     radial-gradient(
@@ -194,7 +203,7 @@ p {
 
 
 
-.dark .hero-gradient {
+.hero-gradient {
   background:
     radial-gradient(
       1200px circle at 15% 35%,
@@ -208,7 +217,7 @@ p {
     );
 }
 
-.hero-gradient {
+.dark  .hero-gradient {
   background:
     /* accent light — top left */
     radial-gradient(
@@ -229,3 +238,4 @@ p {
 
   min-height: 91vh;
 }
+.text-stroke-3 { -webkit-text-stroke: 1.5px black; }

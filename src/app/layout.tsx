@@ -17,11 +17,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-  default: "Akash - Building Intelligent Systems",
+  default: "Akash - Portfolio",
   template: "%s - Akash",
 },
   description:
-    "Designing end-to-end systems for finance, law, and automation.",
+    "Designing end-to-end automation systems.",
 };
 
 

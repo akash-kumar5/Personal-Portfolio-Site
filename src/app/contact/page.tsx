@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { Github, Linkedin, Mail, Copy, Check } from "lucide-react";
 
 export default function ContactPage() {
   const email = "akash.kumar.devs@gmail.com";
@@ -10,126 +11,108 @@ export default function ContactPage() {
   const copyEmail = async () => {
     await navigator.clipboard.writeText(email);
     setCopied(true);
-    setTimeout(() => setCopied(false), 1500);
+    setTimeout(() => setCopied(false), 2000);
   };
 
-  const LinkedinIcon = () => (
-    <svg
-      className="w-5 h-5 text-foreground-muted"
-      aria-hidden="true"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-    >
-      <path
-        fillRule="evenodd"
-        d="M12.51 8.796v1.697a3.738 3.738 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-.988 1.483 1.595 1.595 0 0 1-1.743-.348A1.607 1.607 0 0 1 5.6 4.5a1.601 1.601 0 0 1 1.6 1.606Z"
-        clipRule="evenodd"
-      />
-      <path d="M7.2 8.809H4V19.5h3.2V8.809Z" />
-    </svg>
-  );
-
-  const GithubIcon = () => (
-    <svg
-      className="w-5 h-5 text-gray-800 text-foreground-muted"
-      aria-hidden="true"
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      fill="currentColor"
-      viewBox="0 0 24 24"
-    >
-      <path
-        fillRule="evenodd"
-        d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.393 6.17 10.48 10.48 0 0 0 1.317 6.955 10.045 10.045 0 0 0 5.4 4.418c.504.095.683-.223.683-.494 0-.245-.01-1.052-.014-1.908-2.78.62-3.366-1.21-3.366-1.21a2.711 2.711 0 0 0-1.11-1.5c-.907-.637.07-.621.07-.621.317.044.62.163.885.346.266.183.487.426.647.71.135.253.318.476.538.655a2.079 2.079 0 0 0 2.37.196c.045-.52.27-1.006.635-1.37-2.219-.259-4.554-1.138-4.554-5.07a4.022 4.022 0 0 1 1.031-2.75 3.77 3.77 0 0 1 .096-2.713s.839-.275 2.749 1.05a9.26 9.26 0 0 1 5.004 0c1.906-1.325 2.74-1.05 2.74-1.05.37.858.406 1.828.101 2.713a4.017 4.017 0 0 1 1.029 2.75c0 3.939-2.339 4.805-4.564 5.058a2.471 2.471 0 0 1 .679 1.897c0 1.372-.012 2.477-.012 2.814 0 .272.18.592.687.492a10.05 10.05 0 0 0 5.388-4.421 10.473 10.473 0 0 0 1.313-6.948 10.32 10.32 0 0 0-3.39-6.165A9.847 9.847 0 0 0 12.007 2Z"
-        clipRule="evenodd"
-      />
-    </svg>
-  );
-
   return (
-    <main className="min-h-screen bg-background px-6 py-24 flex justify-center">
+    <main className="min-h-screen bg-white px-6 py-24 flex justify-center text-black font-inter selection:bg-black selection:text-white">
+      {/* HALFTONE TEXTURE */}
+      <div className="fixed inset-0 z-0 opacity-[0.03] pointer-events-none" 
+           style={{ backgroundImage: `radial-gradient(#000 1.5px, transparent 0)`, backgroundSize: '12px 12px' }} />
+
       <motion.section
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-20 items-start"
+        className="relative z-10 w-full max-w-6xl grid grid-cols-1 lg:grid-cols-12 gap-16 items-start"
       >
-        {/* LEFT — visual anchor (replace div with image later) */}
-        <div className="hidden lg:flex items-center justify-center">
-          <div className="relative w-[260px] h-[340px] rounded-2xl overflow-hidden border border-border bg-surface shadow-sm">
-            {/* Image */}
+        {/* LEFT — The Visual Record */}
+        <div className="hidden lg:block lg:col-span-5 relative group">
+          <div className="absolute -inset-4 border-2 border-black rotate-[-2deg] group-hover:rotate-0 transition-transform" />
+          <div className="relative aspect-[3/4] border-[6px] border-black bg-white overflow-hidden shadow-[15px_15px_0px_black]">
             <img
               src="/images/headshot1.png"
               alt="Akash Kumar"
-              className="w-full h-full object-cover grayscale-[20%] contrast-[1.05]"
+              className="w-full h-full object-cover"
             />
-
-            {/* Subtle overlay for consistency */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
+            {/* Panel Label */}
+            <div className="absolute top-0 right-0 bg-black text-white px-4 py-1 font-bebas text-xl italic uppercase">
+              Visual_Log // 01
+            </div>
           </div>
         </div>
 
-        {/* RIGHT — content */}
-        <div>
-          <h1 className="text-4xl font-semibold mb-6">Contact</h1>
+        {/* RIGHT — The Terminal */}
+        <div className="lg:col-span-7 space-y-12">
+          <header className="border-b-[8px] border-black pb-8">
+             <div className="inline-block bg-black text-white px-3 py-1 text-[10px] font-black tracking-[0.4em] mb-4 uppercase italic">
+              Initiate_Transmission
+            </div>
+            <h1 className="text-7xl md:text-9xl font-bebas leading-[0.8] tracking-tighter italic uppercase">
+              CON<span className="text-transparent [-webkit-text-stroke:1.5px_black]">TACT</span>
+            </h1>
+          </header>
 
-          <p className="text-lg text-foreground-muted leading-relaxed max-w-xl mb-12">
-            If you&apos;re working on a system where decisions, constraints, and
-            correctness matter, I&apos;m open to thoughtful conversations.
+          <p className="text-2xl font-black leading-tight tracking-tight uppercase max-w-xl">
+            Building systems where <span className="bg-black text-white px-2 italic">correctness</span> matters. Open for high-stakes conversations.
           </p>
 
-          {/* Email */}
-          <div className="mb-12">
-            <div className="text-sm uppercase tracking-wide text-foreground-muted mb-2">
-              Email
-            </div>
-
-            <div className="flex items-center gap-4">
+          {/* Email Interaction */}
+          <div className="space-y-4">
+            <label className="text-xs font-black uppercase tracking-[0.3em] text-black/40">Direct_Channel</label>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
               <a
                 href={`mailto:${email}`}
-                className="text-lg font-medium underline underline-offset-4 hover:opacity-80 transition"
+                className="text-2xl md:text-4xl font-bebas hover:italic transition-all border-b-4 border-black pb-1 group"
               >
-                {email}
+                {email} <span className="inline-block group-hover:translate-x-2 transition-transform">→</span>
               </a>
 
               <button
                 onClick={copyEmail}
-                className="text-sm px-3 py-1.5 rounded-full border border-border bg-surface hover:bg-surface-soft transition"
+                className="flex items-center gap-2 px-6 py-2 border-2 border-black font-black uppercase text-[10px] tracking-widest hover:bg-black hover:text-white transition-all shadow-[4px_4px_0px_black] active:shadow-none active:translate-x-1 active:translate-y-1"
               >
-                {copied ? "Copied" : "Copy"}
+                {copied ? <Check size={14} /> : <Copy size={14} />}
+                {copied ? "COPIED" : "COPY_ADDRESS"}
               </button>
             </div>
           </div>
 
-          {/* Social cards */}
-          <div>
-            <div className="text-sm uppercase tracking-wide text-foreground-muted mb-4">
-              Elsewhere
-            </div>
+          {/* Social Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-12">
+            <a 
+              href="https://linkedin.com/in/-akash-kumar" 
+              target="_blank"
+              className="group border-[3px] border-black p-6 hover:bg-black transition-colors"
+            >
+              <div className="flex items-center gap-4 mb-2">
+                <Linkedin className="group-hover:text-white transition-colors" />
+                <span className="font-bebas text-3xl group-hover:text-white transition-colors">LINKEDIN</span>
+              </div>
+              <p className="text-[10px] font-bold uppercase tracking-widest text-black/50 group-hover:text-white/50">
+                Professional_Network // CONNECT
+              </p>
+            </a>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <a className="group rounded-xl border border-border bg-surface p-5 hover:bg-surface-soft transition">
-                <div className="flex items-center gap-2 mb-1">
-                  <LinkedinIcon />
+            <a 
+              href="https://github.com/akash-kumar5" 
+              target="_blank"
+              className="group border-[3px] border-black p-6 hover:bg-black transition-colors"
+            >
+              <div className="flex items-center gap-4 mb-2">
+                <Github className="group-hover:text-white transition-colors" />
+                <span className="font-bebas text-3xl group-hover:text-white transition-colors">GITHUB</span>
+              </div>
+              <p className="text-[10px] font-bold uppercase tracking-widest text-black/50 group-hover:text-white/50">
+                Code_Repository // ACCESS
+              </p>
+            </a>
+          </div>
 
-                  <span className="font-medium">LinkedIn</span>
-                </div>
-                <p className="text-sm text-foreground-muted">
-                  Professional profile →
-                </p>
-              </a>
-
-              <a className="group rounded-xl border border-border bg-surface p-5 hover:bg-surface-soft transition">
-                <div className="flex items-center gap-2 mb-1">
-                  <GithubIcon />
-                  <span className="font-medium">GitHub</span>
-                </div>
-                <p className="text-sm text-foreground-muted">
-                  Code & systems →
-                </p>
-              </a>
-            </div>
+          {/* Editorial Detail */}
+          <div className="pt-12 flex justify-between items-center text-[10px] font-black uppercase tracking-[0.2em] text-black/30 border-t border-black/10">
+            <span>Kolkata // 22.57° N</span>
+            <span>END_OF_TRANS</span>
           </div>
         </div>
       </motion.section>
