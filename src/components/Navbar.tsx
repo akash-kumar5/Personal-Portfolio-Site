@@ -147,7 +147,7 @@ export function Navbar() {
             </button>
 
             <div className="flex flex-col gap-8 relative z-10">
-              {["projects", "about", "contact"].map((item, idx) => (
+              {["projects", "about", "contact","blog"].map((item, idx) => (
                 <Link
                   key={item}
                   href={`/${item}`}
