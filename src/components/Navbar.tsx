@@ -11,7 +11,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   const navLink = (href: string) =>
-    `relative transition-all duration-300 px-4 py-1 uppercase tracking-[0.2em] text-[10px] font-black ${
+    `relative transition-all duration-300 px-4 py-1 uppercase tracking-[0.2em] text-[5px] md:text-[10px] font-black ${
       pathname === href
         ? "text-white bg-black skew-x-[-12deg] scale-110 shadow-[4px_4px_0px_#ff000020]" // Subtle cursed glow
         : "text-black/70 hover:text-black hover:italic"
@@ -37,10 +37,7 @@ export function Navbar() {
           {/* Decorative 'Seal' line */}
           <div className="absolute -bottom-1 left-0 w-0 h-1 bg-black group-hover:w-full transition-all duration-500" />
         </Link>
-        {/* <div className="hidden lg:flex items-center gap-2 px-3 py-1 border border-black text-[9px] font-black text-black/70 uppercase tracking-tighter ml-4">
-          <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
-          Open for Collaboration
-        </div> */}
+
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-4">
@@ -78,7 +75,7 @@ export function Navbar() {
             </a>
           </div>
 
-          {/* Resume CTA: 'Cursed Object' aesthetic */}
+          {/* Resume CTA */}
           <a
             href="/Akash_Kumar_Resume.pdf"
             target="_blank"
@@ -111,13 +108,13 @@ export function Navbar() {
         >
           <div className="space-y-1.5">
             <span
-              className={`block h-[3px] w-6 bg-white transition-transform ${open ? "rotate-45 translate-y-2.5" : ""}`}
+              className={`block h-[2px] w-6 bg-white transition-transform ${open ? "rotate-45 translate-y-2.5" : ""}`}
             />
             <span
-              className={`block h-[3px] w-6 bg-white ${open ? "opacity-0" : ""}`}
+              className={`block h-[2px] w-6 bg-white ${open ? "opacity-0" : ""}`}
             />
             <span
-              className={`block h-[3px] w-8 bg-white transition-transform ${open ? "-rotate-45 -translate-y-2.5" : ""}`}
+              className={`block h-[2px] w-8 bg-white transition-transform ${open ? "-rotate-45 -translate-y-2.5" : ""}`}
             />
           </div>
         </button>
@@ -144,7 +141,7 @@ export function Navbar() {
 
             <button
               onClick={() => setOpen(false)}
-              className="absolute top-8 right-8 text-white font-bebas text-3xl uppercase tracking-[0.5em] italic"
+              className="absolute top-18 right-8 text-white font-bebas text-2xl uppercase tracking-[0.5em] italic"
             >
               EXIT [×]
             </button>
@@ -155,10 +152,10 @@ export function Navbar() {
                   key={item}
                   href={`/${item}`}
                   onClick={() => setOpen(false)}
-                  className="group text-7xl font-bebas italic uppercase tracking-tighter transition-all flex items-center gap-4"
+                  className="group text-5xl font-bebas italic uppercase tracking-tighter transition-all flex items-center gap-4"
                 >
                   <span className="text-sm not-italic opacity-40">
-                    0{idx + 1}
+                    0 {idx + 1}
                   </span>
                   <span className="group-hover:pl-6 transition-all">
                     {item}
@@ -167,14 +164,14 @@ export function Navbar() {
               ))}
             </div>
 
-            <div className="mt-12 space-y-6 relative z-10 border-t border-white/20 pt-8">
+            <div className="mt-12 space-y-5 relative z-10 border-t border-white/20 pt-8">
               <a
                 href="/Akash_Kumar_Resume.pdf"
-                className="text-2xl font-black underline decoration-4 underline-offset-8 uppercase italic hover:text-gray-400"
+                className="text-2xl font-black underline decoration-3 underline-offset-8 uppercase italic hover:text-gray-400"
               >
                 ACCESS_RESUME.exe
               </a>
-              <div className="flex gap-8 font-bold uppercase tracking-widest text-xs">
+              <div className="flex mt-4 gap-8 font-bold uppercase tracking-widest text-xs">
                 <a href="#" className="hover:line-through">
                   LinkedIn
                 </a>
