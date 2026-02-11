@@ -4,9 +4,16 @@ import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 
 const MEDIUM_RSS_URL = "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@akashdevbuilds";
+type MediumPost = {
+  link: string
+  title: string
+  description: string
+  pubDate: string
+  categories: string[]
+}
 
 export default function MediumIntegration() {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState<MediumPost[]>([]);
 
   useEffect(() => {
     fetch(MEDIUM_RSS_URL)
@@ -36,7 +43,7 @@ export default function MediumIntegration() {
 
       {/* GRID: Single column on mobile, 3 columns on desktop */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-stone-800 border-2 border-stone-800">
-        {posts.map((post: any, i: number) => (
+        {posts.map((post, i) => (
           <motion.a
             key={i}
             href={post.link}
