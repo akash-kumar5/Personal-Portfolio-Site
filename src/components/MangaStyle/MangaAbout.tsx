@@ -4,84 +4,107 @@ import { motion } from "framer-motion"
 
 export default function MangaAbout() {
   return (
-    // Added relative z-10 to the section to ensure it stays above background splatters
-    <section className="relative z-10 max-w-5xl mx-auto px-6 mt-32 mb-40 font-inter bg-white">
+    // Switched to bg-stone-950 for a deep, ink-black base
+    <section className="relative z-10 max-w-7xl mx-auto px-6 mt-32 mb-40 font-inter bg-stone-950 py-20 border-y border-stone-800">
       
-      {/* 1. THE "CURSED" GLITCH OVERLAY */}
-      {/* Reduced opacity and ensured it sits behind content with z-0 */}
+      {/* 1. THE "CURSED" GLITCH OVERLAY (Inverted for Dark Mode) */}
       <motion.div 
         initial={{ opacity: 0 }}
-        whileInView={{ opacity: [0, 0.03, 0] }}
+        whileInView={{ opacity: [0, 0.05, 0] }}
         transition={{ duration: 0.2, repeat: 1, repeatDelay: 3 }}
-        className="absolute inset-0 z-0 bg-[url('/images/splash.png')] bg-fixed pointer-events-none grayscale contrast-200"
+        className="absolute inset-0 z-0 bg-[url('/images/splash.png')] bg-fixed pointer-events-none grayscale invert opacity-5"
       />
 
-      <div className="relative z-10 grid md:grid-cols-12 gap-12 items-start">
+      <div className="relative z-10 grid md:grid-cols-12 gap-8 md:gap-16 items-start">
         
-        {/* PANEL LEFT */}
-        <div className="md:col-span-4 space-y-4">
-          <motion.h2 
-            initial={{ opacity: 0, x: -20 }}
+        {/* PANEL LEFT: High Contrast Title */}
+        <div className="md:col-span-5 lg:col-span-4 space-y-6">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="font-bebas text-8xl text-black leading-none"
+            className="border-l-[12px] border-stone-100 pl-6"
           >
-            THE <br /> 
-            {/* Switched from text-transparent to text-black with a fallback */}
-            <span className="text-black md:text-transparent md:[-webkit-text-stroke:1.5px_black] hover:text-black transition-colors duration-500 cursor-default italic">
-              METHOD
-            </span>
-          </motion.h2>
+            <h2 className="font-bebas text-7xl md:text-8xl text-stone-100 leading-[0.8] tracking-tighter italic uppercase">
+              About <br /> 
+              <span className="text-transparent [-webkit-text-stroke:1px_#f5f5f4] hover:text-stone-100 transition-all duration-500 cursor-default">
+                ME
+              </span>
+            </h2>
+            <p className="mt-4 text-[10px] font-black uppercase tracking-[0.4em] text-stone-500">
+              Protocol // System Architecture
+            </p>
+          </motion.div>
           
           <motion.div 
             initial={{ width: 0 }}
             whileInView={{ width: "100%" }}
-            transition={{ duration: 0.4, ease: "circOut" }}
-            className="h-[12px] bg-black skew-x-[-20deg]"
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="h-[8px] bg-stone-100 skew-x-[-20deg]"
           />
         </div>
 
-        {/* PANEL RIGHT */}
-        <div className="md:col-span-8 relative">
+        {/* PANEL RIGHT: Muted Grey Content */}
+        <div className="md:col-span-7 lg:col-span-8 space-y-12">
+          
+          {/* Mission Statement (High Vis White) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="text-3xl md:text-5xl font-black leading-[1] tracking-tighter text-stone-100 uppercase"
           >
-            {/* Added text-black to ensure base visibility */}
-            <div className="text-2xl md:text-5xl font-black leading-[1.1] tracking-tighter text-black uppercase">
-              <p>I build architectures that</p>
-              <span className="relative inline-block mt-2 group">
-                {/* Peer-hover was tricky, using a group-hover on the parent instead */}
-                <span className="relative z-10 group-hover:text-white transition-colors duration-300">
-                  KILL FRICTION.
-                </span>
-                <span className="absolute inset-0 bg-black scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 z-0" />
+            <p>I build architectures that</p>
+            <span className="relative inline-block mt-2 group">
+              <span className="relative z-10 group-hover:text-stone-950 transition-colors duration-300">
+                KILL FRICTION.
+              </span>
+              {/* Inversion effect: fills white on hover */}
+              <span className="absolute inset-0 bg-stone-100 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 z-0" />
+            </span>
+          </motion.div>
+
+          {/* Categorized Focus Areas (Grey Tones) */}
+          <div className="grid sm:grid-cols-2 gap-8 md:gap-12 pt-8 border-t-[4px] border-stone-800">
+            
+            {/* Sector 01 */}
+            <div className="space-y-3">
+              <h3 className="font-bebas text-3xl tracking-tight text-stone-100 italic">
+                01. AUTOMATION <span className="text-sm not-italic text-stone-600">// OPSORA</span>
+              </h3>
+              <p className="text-base font-medium leading-snug text-stone-400">
+                Engineering <span className="text-stone-200 font-black italic">Shelly</span>: a high-throughput lead generation engine designed to scale business outreach with precision.
+              </p>
+            </div>
+
+            {/* Sector 02 */}
+            <div className="space-y-3">
+              <h3 className="font-bebas text-3xl tracking-tight text-stone-100 italic">
+                02. INTELLIGENCE <span className="text-sm not-italic text-stone-600">// RESEARCH</span>
+              </h3>
+              <p className="text-base font-medium leading-snug text-stone-400">
+                Developing <span className="text-stone-200 font-black italic">Legal AI</span> with citation-grounded retrieval and quantitative research for crypto market regimes.
+              </p>
+            </div>
+          </div>
+
+          {/* Status Bar (Terminal Style) */}
+          <motion.div 
+            whileHover={{ backgroundColor: "rgba(255, 255, 255, 0.05)" }}
+            className="flex items-center justify-between p-4 border-2 border-stone-800 bg-transparent group transition-all"
+          >
+            <div className="flex items-center gap-4">
+              {/* Muted white pulse */}
+              <div className="w-3 h-3 bg-stone-700 rounded-full animate-pulse shadow-[0_0_10px_rgba(120,113,108,0.3)] group-hover:bg-red-600 transition-colors" />
+              <span className="text-[12px] font-black uppercase tracking-[0.3em] text-stone-500">
+                Current Status: Operational // Kolkata, IN
               </span>
             </div>
-
-            <div className="flex flex-col gap-6 text-black/80">
-              <p className="text-lg md:text-xl font-medium leading-relaxed max-w-xl">
-                Specializing in systems that reduce human effort—from 
-                <span className="text-black font-black mx-1 border-b-[3px] border-black">
-                  Legal AI
-                </span> 
-                with grounded retrieval to high-frequency 
-                <span className="text-black font-black mx-1 border-b-[3px] border-black">
-                  Market Research
-                </span>.
-              </p>
-
-              <div className="flex items-center gap-4 pt-6 border-t-[3px] border-black">
-                <div className="w-3 h-3 bg-red-600 rounded-full animate-pulse shadow-[0_0_10px_rgba(220,38,38,0.5)]" />
-                <span className="text-[12px] font-black uppercase tracking-[0.4em] text-black">
-                  Status: Operational // V.02
-                </span>
-              </div>
-            </div>
+            <span className="text-[10px] font-bold text-stone-600 opacity-0 group-hover:opacity-100 transition-opacity uppercase">
+              Founder @ Opsora
+            </span>
           </motion.div>
+
         </div>
       </div>
     </section>

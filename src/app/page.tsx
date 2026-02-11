@@ -1,5 +1,6 @@
 "use client";
 
+import BindingVow from "@/components/MangaStyle/BiddingVow";
 import MangaAbout from "@/components/MangaStyle/MangaAbout";
 import FeaturedProjects from "@/components/MangaStyle/MangaFeatures";
 import MangaHero from "@/components/MangaStyle/MangaHero";
@@ -19,6 +20,9 @@ export default function Home() {
 
       {/* TECH */}
       <TechSection />
+
+      <BindingVow />
+
     </main>
   );
 }

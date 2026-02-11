@@ -42,10 +42,10 @@ export const Footer = () => (
            </div>
            
            <div className="flex gap-4">
-             <a href="https://github.com/akash-kumar5" target="_blank" className="p-2 border-2 border-black hover:bg-black hover:text-white transition-all">
+             <a href="https://github.com/akash-kumar5" target="_blank" className="p-2 border-2 border-black text-black/70 hover:bg-black hover:text-white transition-all">
                <Github size={20} />
              </a>
-             <a href="https://linkedin.com/in/-akash-kumar" target="_blank" className="p-2 border-2 border-black hover:bg-black hover:text-white transition-all">
+             <a href="https://linkedin.com/in/-akash-kumar" target="_blank" className="p-2 border-2 border-black text-black/70 hover:bg-black hover:text-white transition-all">
                <Linkedin size={20} />
              </a>
            </div>

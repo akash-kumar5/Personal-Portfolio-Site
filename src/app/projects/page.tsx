@@ -4,10 +4,22 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
+    name: "Shelly",
+    id: "shelly",
+    category: "Lead Gen Automation",
+    description:
+      "A high-throughput automation system designed to scrape high-intent leads and orchestrate personalized cold-mail sequences at scale.",
+    focus: "Bypassing anti-bot constraints & high-deliverability mail systems",
+    tech: ["Python", "Playwright", "SMTP", "Lead Scoring", "Streamlit"],
+    link: "https://github.com/akash-kumar5/Shelly",
+    images: ["/images/shelly.png"],
+  },
+  {
     name: "Lexx",
     id: "lexx",
     category: "Legal AI",
-    description: "Citation-grounded legal assistant for Indian law using RAG. Focused on correctness and domain constraints.",
+    description:
+      "Citation-grounded legal assistant for Indian law using RAG. Focused on correctness and domain constraints.",
     focus: "Retrieval correctness under legal constraints",
     tech: ["Next.js", "FastAPI", "RAG", "LLMs"],
     link: "https://github.com/akash-kumar5/Lexx-LegalAI",
@@ -17,7 +29,8 @@ const projects = [
     name: "Market Classifier",
     id: "regime",
     category: "Intelligence System",
-    description: "Live system classifying crypto market regimes using multi-timeframe data and probabilistic models.",
+    description:
+      "Live system classifying crypto market regimes using multi-timeframe data and probabilistic models.",
     link: "https://github.com/akash-kumar5/CryptoMarket_Regime_Classifier",
     images: ["/images/regime-ui.png"],
     focus: "Real-time detection under noisy conditions",
@@ -27,94 +40,128 @@ const projects = [
     name: "Dazai",
     id: "dazai",
     category: "Research System",
-    description: "Market-regime aware research system with backtesting and risk-aware experimentation.",
+    description:
+      "Market-regime aware research system with backtesting and risk-aware experimentation.",
     focus: "Decision-making under noisy market regimes",
     tech: ["Python", "Pandas", "Backtesting"],
     link: "https://github.com/akash-kumar5/Dazai---Quant-Trading",
     images: ["/images/dazaiui.png"],
-
   },
   {
     name: "Zenin",
     id: "zenin",
     category: "Finance Tracker",
-    description: "Mobile-first product focused on understanding spending behavior and long-term financial habits.",
+    description:
+      "Mobile-first product focused on understanding spending behavior and long-term financial habits.",
     focus: "Behavioral signals from financial data",
     tech: ["React Native", "Firebase"],
     link: "https://github.com/akash-kumar5/zenin",
-    images: ["/images/zenin-dashboard.jpg","/images/zenin-login.jpg"],
+    images: ["/images/zenin-dashboard.jpg", "/images/zenin-login.jpg"],
   },
 ];
 
 export default function ProjectPage() {
   return (
-    <main className="min-h-screen bg-white px-6 py-24 text-black font-inter">
-      {/* SECTION HEADER */}
-      <header className="max-w-7xl mx-auto mb-32 border-l-[12px] border-black pl-8">
-        <h1 className="text-8xl md:text-[10rem] font-bebas leading-[0.8] tracking-tighter italic">
-          PROJECTS <br />
-          <span className="text-transparent [-webkit-text-stroke:1.5px_black]">ARCHIVES</span>
+    <main className="min-h-screen bg-stone-950 px-4 md:px-6 py-12 md:py-24 text-stone-100 font-inter overflow-x-hidden">
+      {/* 1. BACKGROUND TEXTURE */}
+      <div
+        className="fixed inset-0 z-0 opacity-[0.05] pointer-events-none"
+        style={{
+          backgroundImage: `radial-gradient(#fff 1px, transparent 0)`,
+          backgroundSize: "24px 24px",
+        }}
+      />
+
+      {/* 2. SECTION HEADER */}
+      <header className="relative z-10 max-w-7xl mx-auto mb-16 md:mb-40 border-l-[8px] md:border-l-[12px] border-stone-100 pl-5 md:pl-8">
+        <h1 className="text-6xl sm:text-7xl md:text-[10rem] font-bebas leading-[0.85] md:leading-[0.8] tracking-tighter italic uppercase">
+          PROJECT <br />
+          <span className="text-transparent [-webkit-text-stroke:1px_#f5f5f4] md:[-webkit-text-stroke:2px_#f5f5f4]">
+            ARCHIVES
+          </span>
         </h1>
-        <p className="text-black/60 font-black uppercase tracking-[0.4em] mt-6 text-xs">
-          Registry // Operational Systems // V.02
+        <p className="text-stone-500 font-black uppercase tracking-[0.2em] md:tracking-[0.4em] mt-4 md:mt-6 text-[9px] md:text-xs italic">
+          Registry // Operational Systems // Opsora_V.02
         </p>
       </header>
 
-      <div className="max-w-7xl mx-auto space-y-40">
+
+      {/* 3. PROJECT LIST */}
+      <div className="relative z-10 max-w-7xl mx-auto space-y-32 md:space-y-64">
         {projects.map((project, index) => (
           <motion.article
             key={project.id}
-            initial={{ opacity: 0, y: 50 }}
+            id={project.id}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className={`grid grid-cols-1 md:grid-cols-12 gap-12 items-center`}
+            /* FIX: Added scroll-mt-[25vh] (or adjust to your preference) 
+         to center the project vertically when linked from landing 
+      */
+            className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-20 items-center group scroll-mt-[20vh] md:scroll-mt-[25vh]"
           >
-            {/* IMAGE PANEL (Alternates Left/Right) */}
-            <div className={`md:col-span-7 relative ${index % 2 !== 0 ? 'md:order-2' : ''}`}>
-              <div className="absolute -inset-2 border-2 border-black rotate-[-2deg] -z-10" />
-              <div className="relative aspect-video border-[4px] border-black bg-gray-100 overflow-hidden group">
+            {/* IMAGE PANEL */}
+            <div
+              className={`md:col-span-7 relative order-1 ${index % 2 !== 0 ? "md:order-2" : ""}`}
+            >
+              {/* Decorative Frame */}
+              <div className="absolute -inset-2 md:-inset-4 border-1 border-stone-800 rotate-[-1.5deg] group-hover:rotate-0 transition-transform duration-500" />
+
+              <div className="relative aspect-video border-[2px] md:border-[8px] border-stone-100 bg-stone-900 overflow-hidden shadow-[20px_20px_0px_rgba(255,255,255,0.02)]">
                 <img
                   src={project.images[0]}
-                  className="object-cover w-full h-full group-hover:scale-101 transition-transform duration-700"
+                  className="object-cover w-full h-full opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                   alt={project.name}
                 />
               </div>
             </div>
 
             {/* TEXT PANEL */}
-            <div className={`md:col-span-5 space-y-6 ${index % 2 !== 0 ? 'md:order-1' : ''}`}>
+            <div
+              className={`md:col-span-5 space-y-6 md:space-y-8 order-2 ${index % 2 !== 0 ? "md:order-1" : ""}`}
+            >
               <div className="space-y-2">
-                <h2 className="font-bebas text-6xl leading-none tracking-tighter uppercase">
+                <div className="inline-block bg-stone-100 text-stone-950 px-2 py-0.5 text-[9px] font-black tracking-widest uppercase italic">
+                  Sector_0{index + 1}
+                </div>
+                <h2 className="font-bebas text-5xl md:text-7xl leading-none tracking-tighter uppercase italic text-stone-100">
                   {project.name}
                 </h2>
-                <p className="text-xs font-black uppercase tracking-widest text-black/40">
+                <p className="text-[10px] md:text-xs font-black uppercase tracking-[0.3em] text-stone-500">
                   Classification: {project.category}
                 </p>
               </div>
 
-              <p className="text-lg font-medium leading-tight border-l-4 border-black pl-4">
+              <p className="text-base md:text-xl font-medium leading-tight text-stone-400 border-l-4 border-stone-800 pl-4 italic">
                 {project.description}
               </p>
 
               <div className="flex flex-wrap gap-2">
                 {project.tech.map((t) => (
-                  <span key={t} className="bg-black text-white text-[10px] font-black px-2 py-0.5 uppercase tracking-tighter">
+                  <span
+                    key={t}
+                    className="border border-stone-700 text-stone-300 text-[8px] md:text-[10px] font-black px-2 py-1 uppercase tracking-tighter hover:bg-stone-100 hover:text-stone-950 transition-colors"
+                  >
                     {t}
                   </span>
                 ))}
               </div>
 
-              <div className="pt-4 border-t border-black/10">
-                <p className="text-[10px] font-black uppercase tracking-[0.2em] mb-4">
-                  Focus // <span className="text-black italic">{project.focus}</span>
+              <div className="pt-6 border-t border-stone-800/50">
+                <p className="text-[10px] md:text-xs font-black uppercase tracking-[0.2em] mb-4 text-stone-600">
+                  Core_Focus //{" "}
+                  <span className="text-stone-100 italic">{project.focus}</span>
                 </p>
-                
+
                 <a
                   href={project.link}
                   target="_blank"
-                  className="inline-flex items-center gap-2 font-bebas text-2xl hover:italic hover:pl-4 transition-all group"
+                  className="inline-flex items-center gap-4 font-bebas text-3xl md:text-4xl text-stone-100 hover:italic hover:pl-4 transition-all group"
                 >
-                  SOURCE_CODE <span className="group-hover:translate-x-2 transition-transform">→</span>
+                  ACCESS_REPOSITORY{" "}
+                  <span className="group-hover:translate-x-2 transition-transform text-red-900">
+                    →
+                  </span>
                 </a>
               </div>
             </div>
@@ -122,26 +169,41 @@ export default function ProjectPage() {
         ))}
       </div>
 
-      {/* FINAL CALL TO ACTION */}
-      <section className="max-w-7xl mx-auto mt-60 mb-20">
-        <div className="bg-black text-white p-12 md:p-20 relative overflow-hidden">
-          {/* Halftone BG */}
-          <div className="absolute inset-0 opacity-10" 
-               style={{ backgroundImage: `radial-gradient(#fff 1.5px, transparent 0)`, backgroundSize: '10px 10px' }} />
-          
-          <div className="relative z-10 max-w-2xl">
-            <h2 className="font-bebas text-6xl md:text-8xl leading-none italic mb-8">
-              UNLEASH THE <br /> ARCHITECTURE.
-            </h2>
-            <p className="text-white/70 font-bold uppercase tracking-widest mb-10">
-              Open for collaboration on high-stakes systems.
-            </p>
-            <a href="/contact" className="inline-block border-2 border-white px-10 py-4 font-black uppercase tracking-widest hover:bg-white hover:text-black transition-all">
-              Initiate Contact
+      {/* 4. FINAL CTA (System Exit) */}
+      <section className="relative z-10 max-w-7xl mx-auto mt-40 md:mt-80 mb-20">
+        <div className="border-[10px] border-stone-100 p-8 md:p-24 relative overflow-hidden bg-stone-100">
+          <div
+            className="absolute inset-0 opacity-10"
+            style={{
+              backgroundImage: `radial-gradient(#000 2px, transparent 0)`,
+              backgroundSize: "12px 12px",
+            }}
+          />
+
+          <div className="relative z-10 flex flex-col md:flex-row justify-between items-end gap-12">
+            <div className="max-w-2xl">
+              <h2 className="font-bebas text-6xl md:text-[10rem] leading-[0.8] italic mb-8 text-stone-950 uppercase tracking-tighter">
+                UNLEASH <br /> THE SYSTEM.
+              </h2>
+              <p className="text-xs md:text-sm font-black uppercase tracking-[0.4em] text-stone-600">
+                Seeking specialized collaboration for high-stakes architectures.
+              </p>
+            </div>
+            <a
+              href="/contact"
+              className="w-full md:w-auto text-center bg-stone-950 text-stone-100 px-12 py-6 font-bebas text-4xl italic tracking-tighter hover:bg-red-900 transition-all shadow-[10px_10px_0px_#444]"
+            >
+              INITIATE_CONTRACT →
             </a>
           </div>
         </div>
       </section>
+
+      {/* 5. EDITORIAL FOOTER */}
+      <footer className="relative z-10 max-w-7xl mx-auto py-12 flex justify-between items-center text-[10px] font-black uppercase tracking-[0.5em] text-stone-700">
+        <span>Kolkata // Archive_Ref_2026</span>
+        <span>Vol. 01 // Page 404</span>
+      </footer>
     </main>
   );
 }

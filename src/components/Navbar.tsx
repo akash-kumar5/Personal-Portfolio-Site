@@ -20,16 +20,17 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-[60] bg-white border-b-[6px] border-black">
-      <nav className="mx-auto max-w-7xl px-6 py-3 flex items-center justify-between">
-        
+      <nav className="mx-auto max-w-7xl px-6 py-2 flex items-center justify-between">
         {/* Brand: JJK Title Card Style */}
         <Link
           href="/"
           className="group relative flex flex-col font-bebas leading-[0.8] tracking-tighter"
         >
           <div className="flex items-center gap-1">
-             <span className="text-black text-4xl group-hover:italic transition-all italic">AKASH </span>
-             <Zap size={18} fill="black" className="animate-pulse" />
+            <span className="text-black text-4xl group-hover:italic transition-all italic">
+              AKASH{" "}
+            </span>
+            <Zap size={18} fill="black" className="animate-pulse" />
           </div>
           <span className="text-transparent text-4xl [-webkit-text-stroke:1.5px_black] group-hover:text-black transition-colors">
             KUMAR
@@ -37,6 +38,10 @@ export function Navbar() {
           {/* Decorative 'Seal' line */}
           <div className="absolute -bottom-1 left-0 w-0 h-1 bg-black group-hover:w-full transition-all duration-500" />
         </Link>
+        {/* <div className="hidden lg:flex items-center gap-2 px-3 py-1 border border-black text-[9px] font-black text-black/70 uppercase tracking-tighter ml-4">
+          <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
+          Open for Collaboration
+        </div> */}
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-4">
@@ -55,10 +60,18 @@ export function Navbar() {
           <div className="h-6 w-[2px] bg-black rotate-[20deg]" />
 
           <div className="flex items-center gap-5 ml-4">
-            <a href="https://linkedin.com/in/-akash-kumar" target="_blank" className="text-black hover:scale-125 transition-transform">
+            <a
+              href="https://linkedin.com/in/-akash-kumar"
+              target="_blank"
+              className="text-black hover:scale-125 transition-transform"
+            >
               <Linkedin size={18} strokeWidth={2.5} />
             </a>
-            <a href="https://github.com/akash-kumar5" target="_blank" className="text-black hover:scale-125 transition-transform">
+            <a
+              href="https://github.com/akash-kumar5"
+              target="_blank"
+              className="text-black hover:scale-125 transition-transform"
+            >
               <Github size={18} strokeWidth={2.5} />
             </a>
           </div>
@@ -80,7 +93,10 @@ export function Navbar() {
               }}
             />
             <span className="relative z-10 flex items-center gap-2">
-              RESUME <span className="text-[8px] opacity-40 group-hover:opacity-100 italic transition-opacity">[🔻]</span>
+              RESUME{" "}
+              <span className="text-[8px] opacity-40 group-hover:opacity-100 italic transition-opacity">
+                [🔻]
+              </span>
             </span>
           </a>
         </div>
@@ -92,9 +108,15 @@ export function Navbar() {
           aria-label="Toggle menu"
         >
           <div className="space-y-1.5">
-            <span className={`block h-[3px] w-6 bg-white transition-transform ${open ? "rotate-45 translate-y-2.5" : ""}`} />
-            <span className={`block h-[3px] w-6 bg-white ${open ? "opacity-0" : ""}`} />
-            <span className={`block h-[3px] w-8 bg-white transition-transform ${open ? "-rotate-45 -translate-y-2.5" : ""}`} />
+            <span
+              className={`block h-[3px] w-6 bg-white transition-transform ${open ? "rotate-45 translate-y-2.5" : ""}`}
+            />
+            <span
+              className={`block h-[3px] w-6 bg-white ${open ? "opacity-0" : ""}`}
+            />
+            <span
+              className={`block h-[3px] w-8 bg-white transition-transform ${open ? "-rotate-45 -translate-y-2.5" : ""}`}
+            />
           </div>
         </button>
       </nav>
@@ -110,8 +132,13 @@ export function Navbar() {
             className="fixed inset-0 bg-black text-white z-[70] flex flex-col justify-center px-12 gap-8 overflow-hidden"
           >
             {/* Background Halftones */}
-            <div className="absolute inset-0 opacity-10 pointer-events-none" 
-                 style={{ backgroundImage: "radial-gradient(white 1.5px, transparent 0)", backgroundSize: "12px 12px" }} />
+            <div
+              className="absolute inset-0 opacity-10 pointer-events-none"
+              style={{
+                backgroundImage: "radial-gradient(white 1.5px, transparent 0)",
+                backgroundSize: "12px 12px",
+              }}
+            />
 
             <button
               onClick={() => setOpen(false)}
@@ -128,8 +155,12 @@ export function Navbar() {
                   onClick={() => setOpen(false)}
                   className="group text-7xl font-bebas italic uppercase tracking-tighter transition-all flex items-center gap-4"
                 >
-                  <span className="text-sm not-italic opacity-40">0{idx + 1}</span>
-                  <span className="group-hover:pl-6 transition-all">{item}</span>
+                  <span className="text-sm not-italic opacity-40">
+                    0{idx + 1}
+                  </span>
+                  <span className="group-hover:pl-6 transition-all">
+                    {item}
+                  </span>
                 </Link>
               ))}
             </div>
@@ -142,8 +173,12 @@ export function Navbar() {
                 ACCESS_RESUME.exe
               </a>
               <div className="flex gap-8 font-bold uppercase tracking-widest text-xs">
-                <a href="#" className="hover:line-through">LinkedIn</a>
-                <a href="#" className="hover:line-through">GitHub</a>
+                <a href="#" className="hover:line-through">
+                  LinkedIn
+                </a>
+                <a href="#" className="hover:line-through">
+                  GitHub
+                </a>
               </div>
             </div>
           </motion.div>

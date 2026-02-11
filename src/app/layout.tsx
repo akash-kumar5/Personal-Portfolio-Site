@@ -15,13 +15,16 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: {
-  default: "Akash - Portfolio",
-  template: "%s - Akash",
-},
-  description:
-    "Designing end-to-end automation systems.",
+export const metadata = {
+  title: "Akash Kumar | Opsora Automation | AI & Systems Engineer",
+  description: "Portfolio of Akash Kumar, Founder of Opsora. Specializing in AI Automation, Market Intelligence, and Shelly—a lead generation automation tool.",
+  keywords: ["Akash Kumar", "Opsora", "Shelly Automation", "Lead Scraping", "Python AI", "Kolkata Software Engineer", "MCA Student Portfolio"],
+  openGraph: {
+    title: "Akash Kumar | Founder of Opsora",
+    description: "Systems Engineer specializing in high-stakes automation and AI.",
+    url: "https://opsora.in",
+    images: [{ url: "/images/manga-pfp.png" }],
+  },
 };
 
 
