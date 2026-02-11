@@ -1,4 +1,4 @@
-import { Download, Send, Github, Linkedin, Zap } from "lucide-react";
+import { Download, Github, Linkedin, Zap } from "lucide-react";
 
 export const Footer = () => (
   <footer className="relative bg-white pt-24 pb-12 overflow-hidden border-t-[12px] border-black">

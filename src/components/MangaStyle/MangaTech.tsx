@@ -50,7 +50,7 @@ export default function TechSection() {
           >
             {[...TECH_STACK, ...TECH_STACK].map((tech, i) => (
               <span key={i} className="font-bebas text-3xl text-white/30 uppercase tracking-[0.5em] italic">
-                {tech} // SYSTEM_LOG // {tech}
+                {tech} {"// SYSTEM_LOG // "}{tech}
               </span>
             ))}
           </motion.div>

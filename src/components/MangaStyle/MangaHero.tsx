@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 
 export default function MangaHero() {
   return (
-    <section className="relative min-h-[87vh] flex flex-col justify-start md:justify-center overflow-hidden bg-white text-black font-inter border-[7px] border-black m-2 md:m-4">
+    <section className="relative min-h-[83vh] flex flex-col justify-start md:justify-center overflow-hidden bg-white text-black font-inter border-[7px] border-black m-2 md:m-2">
       
       {/* HALFTONE TEXTURE */}
       <div className="absolute inset-0 z-0 opacity-[0.04] pointer-events-none" 

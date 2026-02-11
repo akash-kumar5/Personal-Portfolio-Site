@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Github, Linkedin, Mail, Copy, Check } from "lucide-react";
+import { Github, Linkedin, Copy, Check } from "lucide-react";
 
 export default function ContactPage() {
   const email = "akash.kumar.devs@gmail.com";
