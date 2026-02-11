@@ -35,7 +35,7 @@ const COMMITMENTS: Commitment[] = [
 
 export default function ProfessionalBindingVow() {
   return (
-    <section className="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-25 bg-stone-950 font-inter overflow-hidden">
+    <section className="relative max-w-7xl mx-auto px-4 sm:px-6 py-7 md:py-10 bg-stone-950 font-inter overflow-hidden">
       
       {/* SECTION HEADER */}
       <div className="mb-8 border-b border-stone-800 pb-6 relative">
@@ -47,8 +47,8 @@ export default function ProfessionalBindingVow() {
         </div>
         {/* Adjusted Font Scaling for Mobile: text-6xl -> 8xl */}
         <h2 className="font-bebas text-6xl sm:text-7xl md:text-[6rem] text-stone-100 italic uppercase leading-[0.8] tracking-tighter">
-          CORE <br />
-          <span className="text-transparent [-webkit-text-stroke:1px_#f5f5f4]">COMMITMENTS</span>
+          CORE  
+          <span className="text-transparent [-webkit-text-stroke:1px_#f5f5f4]"> COMMITMENTS</span>
         </h2>
       </div>
 

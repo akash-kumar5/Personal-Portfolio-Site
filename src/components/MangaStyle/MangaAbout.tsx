@@ -32,7 +32,7 @@ export default function MangaAbout() {
               </span>
             </h2>
             <p className="mt-4 text-[10px] font-black uppercase tracking-[0.4em] text-stone-500">
-              Protocol // System Architecture
+              {"Protocol // System Architecture"}
             </p>
           </motion.div>
           
@@ -70,7 +70,7 @@ export default function MangaAbout() {
             {/* Sector 01 */}
             <div className="space-y-3">
               <h3 className="font-bebas text-3xl tracking-tight text-stone-100 italic">
-                01. AUTOMATION <span className="text-sm not-italic text-stone-600">// OPSORA</span>
+                01. AUTOMATION <span className="text-sm not-italic text-stone-600">{"// OPSORA"}</span>
               </h3>
               <p className="text-base font-medium leading-snug text-stone-400">
                 Engineering <span className="text-stone-200 font-black italic">Shelly</span>: a high-throughput lead generation engine designed to scale business outreach with precision.
@@ -80,7 +80,7 @@ export default function MangaAbout() {
             {/* Sector 02 */}
             <div className="space-y-3">
               <h3 className="font-bebas text-3xl tracking-tight text-stone-100 italic">
-                02. INTELLIGENCE <span className="text-sm not-italic text-stone-600">// RESEARCH</span>
+                02. INTELLIGENCE <span className="text-sm not-italic text-stone-600">{"// RESEARCH"}</span>
               </h3>
               <p className="text-base font-medium leading-snug text-stone-400">
                 Developing <span className="text-stone-200 font-black italic">Legal AI</span> with citation-grounded retrieval and quantitative research for crypto market regimes.
@@ -97,7 +97,7 @@ export default function MangaAbout() {
               {/* Muted white pulse */}
               <div className="w-3 h-3 bg-stone-700 rounded-full animate-pulse shadow-[0_0_10px_rgba(120,113,108,0.3)] group-hover:bg-red-600 transition-colors" />
               <span className="text-[12px] font-black uppercase tracking-[0.3em] text-stone-500">
-                Current Status: Operational // Kolkata, IN
+                {"Current Status: Operational // Kolkata, IN"}
               </span>
             </div>
             <span className="text-[10px] font-bold text-stone-600 opacity-0 group-hover:opacity-100 transition-opacity uppercase">

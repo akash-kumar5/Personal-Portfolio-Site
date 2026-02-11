@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Github, Linkedin, Copy, Check } from "lucide-react";
-import InitiateButton from "@/components/InitiateBtn";
 import OpsoraCTA from "@/components/OpsoraCTA";
 
 export default function ContactPage() {

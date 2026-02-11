@@ -10,7 +10,6 @@ export function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  // Manga-style link styling: Shifted to a 'Label' aesthetic
   const navLink = (href: string) =>
     `relative transition-all duration-300 px-4 py-1 uppercase tracking-[0.2em] text-[10px] font-black ${
       pathname === href
@@ -54,6 +53,9 @@ export function Navbar() {
             </Link>
             <Link href="/contact" className={navLink("/contact")}>
               Contact
+            </Link>
+            <Link href="/blog" className={navLink("/blog")}>
+              Blog
             </Link>
           </div>
 

@@ -1,5 +1,6 @@
 "use client";
 
+import FeaturedLog from "@/components/FeaturedBlog";
 import BindingVow from "@/components/MangaStyle/BiddingVow";
 import MangaAbout from "@/components/MangaStyle/MangaAbout";
 import FeaturedProjects from "@/components/MangaStyle/MangaFeatures";
@@ -20,7 +21,7 @@ export default function Home() {
 
       {/* TECH */}
       <TechSection />
-
+    <FeaturedLog />
       <BindingVow />
 
     </main>

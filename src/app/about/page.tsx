@@ -63,16 +63,12 @@ export default function AboutPage() {
               />
               <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
             </div>
-            {/* Grade Stamp */}
-            <div className="absolute -bottom-4 -right-2 md:-right-4 bg-black text-white px-3 py-1 font-bebas text-lg md:text-xl rotate-[12deg]">
-              SPECIAL GRADE
-            </div>
           </div>
 
           {/* TEXT CONTENT */}
           <div className="md:col-span-8 space-y-4 md:space-y-6">
             <div className="inline-block bg-black text-white px-3 py-1 text-[10px] md:text-xs font-black tracking-[0.3em] md:tracking-[0.4em] uppercase">
-              STATUS_REPORT // CLASSIFIED
+              {"STATUS_REPORT // CLASSIFIED"}
             </div>
 
             <h1 className="text-5xl sm:text-6xl md:text-8xl font-bebas italic leading-[0.9] tracking-tighter uppercase">
@@ -126,7 +122,7 @@ export default function AboutPage() {
                 </li>
                 <li className="flex items-start gap-4 font-black uppercase text-[10px] md:text-xs tracking-widest">
                   <span className="text-red-600">[02]</span>
-                  Developing 'Shelly': The Lead Generation & Mail Automation Engine
+                  Developing &apos;Shelly&apos;: The Lead Generation & Mail Automation Engine
                 </li>
                 <li className="flex items-start gap-4 font-black uppercase text-[10px] md:text-xs tracking-widest">
                   <span className="text-red-600">[03]</span>
