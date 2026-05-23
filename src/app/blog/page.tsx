@@ -36,7 +36,7 @@ export default function MediumIntegration() {
         </h2>
         <div className="text-left md:text-right mt-4 md:mt-0">
           <p className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-stone-500 italic">
-            Live_Medium_Sync // Registry_V.02
+            Medium_Articles // Engineering_Notes
           </p>
         </div>
       </div>
@@ -63,7 +63,7 @@ export default function MediumIntegration() {
                 </span>
               </div>
               
-              <h3 className="font-bebas text-3xl md:text-3xl text-stone-100 leading-tight mb-4 md:mb-6 group-hover:text-red-900 transition-colors uppercase">
+              <h3 className="font-bebas text-3xl md:text-3xl text-stone-100 leading-tight mb-4 md:mb-6 group-hover:text-stone-100 transition-colors uppercase">
                 {post.title}
               </h3>
 
@@ -77,7 +77,7 @@ export default function MediumIntegration() {
             </div>
             
             <div className="flex items-center gap-4 text-[9px] md:text-[10px] font-black text-stone-100 uppercase tracking-[0.3em] mt-8">
-              ACCESS_MEDIUM <div className="h-[1px] w-6 md:w-8 bg-stone-100 group-hover:w-16 transition-all duration-500" />
+              Open_on_Medium <div className="h-[1px] w-6 md:w-8 bg-stone-100 group-hover:w-16 transition-all duration-500" />
             </div>
           </motion.a>
         ))}
@@ -86,7 +86,7 @@ export default function MediumIntegration() {
       {/* MOBILE FOOTER (Visible only on small screens) */}
       <div className="mt-8 md:hidden flex justify-end">
         <span className="text-[8px] font-black text-stone-800 uppercase tracking-widest">
-          Swipe_to_Browse // Archive_Ref_2026
+          Swipe_to_explore_articles
         </span>
       </div>
     </section>

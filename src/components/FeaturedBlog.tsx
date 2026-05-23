@@ -8,8 +8,8 @@ export default function FeaturedLog() {
   const featured = {
     title: "How I Built a Market Regime Classifier for Crypto Using HMMs and LSTMs",
     id: "market-regime-classifier",
-    views: 196,
-    presentations: 90,
+    views: 404,
+    reads: 147,
     category: "QUANT_RESEARCH",
     link: "https://medium.com/@akashdevbuilds/how-i-built-a-market-regime-classifier-for-crypto-using-hmms-and-lstms-40e1074e5b72",
     excerpt: "Most trading systems fail not because their logic is wrong—but because they are blind to context. A deep dive into utilizing Probabilistic Models for live market state detection."
@@ -21,7 +21,7 @@ export default function FeaturedLog() {
         <div className="flex items-center gap-3 mb-8">
           <div className="w-2 h-2 bg-red-900 animate-pulse" />
           <span className="text-[10px] font-black tracking-[0.4em] text-stone-500 uppercase">
-            Featured_Intelligence // High_Engagement
+            Featured_Writing // Engineering_Notes
           </span>
         </div>
 
@@ -43,9 +43,9 @@ export default function FeaturedLog() {
               <div className="flex-1">
                 <div className="flex items-center gap-2 text-stone-500 mb-1">
                   <BarChart3 size={14} />
-                  <span className="text-[9px] font-black uppercase tracking-widest">System_Impressions</span>
+                  <span className="text-[9px] font-black uppercase tracking-widest">Reads</span>
                 </div>
-                <div className="font-bebas text-5xl md:text-6xl text-stone-100 italic">{featured.presentations}</div>
+                <div className="font-bebas text-5xl md:text-6xl text-stone-100 italic">{featured.reads}</div>
               </div>
             </div>
 
@@ -62,7 +62,7 @@ export default function FeaturedLog() {
               </p>
               
               <div className="pt-4 flex items-center gap-4 text-[10px] font-black text-stone-100 uppercase tracking-[0.4em]">
-                ACCESS_FULL_DEBRIEF <ArrowUpRight size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                READ_FULL_BREAKDOWN <ArrowUpRight size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </div>
             </div>
           </div>

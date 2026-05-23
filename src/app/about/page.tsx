@@ -68,15 +68,15 @@ export default function AboutPage() {
           {/* TEXT CONTENT */}
           <div className="md:col-span-8 space-y-4 md:space-y-6">
             <div className="inline-block bg-black text-white px-3 py-1 text-[10px] md:text-xs font-black tracking-[0.3em] md:tracking-[0.4em] uppercase">
-              {"STATUS_REPORT // CLASSIFIED"}
+              {"AI SYSTEMS // AUTOMATION // ENGINEERING"}
             </div>
 
             <h1 className="text-5xl sm:text-6xl md:text-8xl font-bebas italic leading-[0.9] tracking-tighter uppercase">
-              THE{" "}
+              AI{" "}
               <span className="text-transparent [-webkit-text-stroke:1px_black]">
-                SYSTEM
+                SYSTEMS
               </span>{" "}
-              SORCERER
+              ENGINEER
             </h1>
 
             <div className="space-y-3 md:space-y-4 border-l-[3px] md:border-l-[4px] border-black pl-4 md:pl-6">
@@ -100,7 +100,7 @@ export default function AboutPage() {
               </h2>
               <p className="text-sm md:text-base text-black/80 font-medium leading-relaxed italic">
                 &quot;Correctness before cleverness. Constraints before scale.
-                Fail loudly or don&apos;t fail at all.&quot;
+                Correctness before cleverness. Constraints before scale. Systems should be observable, debuggable, and explainable. &quot;
               </p>
               <div className="absolute top-0 right-0 w-6 h-6 md:w-8 md:h-8 bg-black skew-x-[45deg] translate-x-3 md:translate-x-4 -translate-y-3 md:-translate-y-4" />
             </div>
@@ -117,7 +117,7 @@ export default function AboutPage() {
                     target="_blank"
                     className="hover:underline"
                   >
-                    Founder @ Opsora — Building Production-Grade Automation for Businesses
+                    Building automation systems and workflow infrastructure.
                   </a>
                 </li>
                 <li className="flex items-start gap-4 font-black uppercase text-[10px] md:text-xs tracking-widest">
@@ -135,7 +135,7 @@ export default function AboutPage() {
               <h2 className="font-bebas text-2xl md:text-3xl mb-1 md:mb-2 italic">BACKGROUND</h2>
               <p className="text-black/70 font-black uppercase text-[10px] md:text-xs leading-loose tracking-tight">
                 MCA student (2024–26) @ Techno Main Salt Lake. <br />
-                Iterating from void to product.
+                Focused on building practical AI systems with real-world applications.
               </p>
             </div>
           </aside>

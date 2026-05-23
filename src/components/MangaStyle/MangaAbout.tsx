@@ -32,7 +32,7 @@ export default function MangaAbout() {
               </span>
             </h2>
             <p className="mt-4 text-[10px] font-black uppercase tracking-[0.4em] text-stone-500">
-              {"Protocol // System Architecture"}
+              {"AI Systems · Automation · Infrastructure"}
             </p>
           </motion.div>
           
@@ -54,10 +54,10 @@ export default function MangaAbout() {
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-black leading-[1] tracking-tighter text-stone-100 uppercase"
           >
-            <p>I build architectures that</p>
+            <p>Building systems that</p>
             <span className="relative inline-block mt-2 group">
               <span className="relative z-10 group-hover:text-stone-950 transition-colors duration-300">
-                KILL FRICTION.
+                RETRIEVE, REASON, AUTOMATE.
               </span>
               {/* Inversion effect: fills white on hover */}
               <span className="absolute inset-0 bg-stone-100 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 z-0" />
@@ -83,7 +83,7 @@ export default function MangaAbout() {
                 02. INTELLIGENCE <span className="text-sm not-italic text-stone-600">{"// RESEARCH"}</span>
               </h3>
               <p className="text-base font-medium leading-snug text-stone-400">
-                Developing <span className="text-stone-200 font-black italic">Legal AI</span> with citation-grounded retrieval and quantitative research for crypto market regimes.
+                Building <span className="text-stone-200 font-black italic">Retrieval-powered AI Workflows, Market Intelligence Systems, and Domain-specific Reasoning Pipelines</span> backed by real-time data.
               </p>
             </div>
           </div>
@@ -97,12 +97,12 @@ export default function MangaAbout() {
               {/* Muted white pulse */}
               <div className="w-3 h-3 bg-stone-700 rounded-full animate-pulse shadow-[0_0_10px_rgba(120,113,108,0.3)] group-hover:bg-red-600 transition-colors" />
               <span className="text-[12px] font-black uppercase tracking-[0.3em] text-stone-500">
-                {"Current Status: Operational // Kolkata, IN"}
+                {"CURRENTLY BUILDING // KOLKATA, INDIA"}
               </span>
             </div>
-            <span className="text-[10px] font-bold text-stone-600 opacity-0 group-hover:opacity-100 transition-opacity uppercase">
-              Founder @ Opsora
-            </span>
+            {/* <span className="text-[10px] font-bold text-stone-600 opacity-0 group-hover:opacity-100 transition-opacity uppercase">
+              whatt
+            </span> */}
           </motion.div>
 
         </div>

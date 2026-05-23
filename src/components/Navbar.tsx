@@ -29,7 +29,7 @@ export function Navbar() {
             <span className="text-black text-4xl group-hover:italic transition-all italic">
               AKASH{" "}
             </span>
-            <Zap size={18} fill="black" className="animate-pulse" />
+            {/* <Zap size={18} fill="black" className="animate-pulse" /> */}
           </div>
           <span className="text-transparent text-4xl [-webkit-text-stroke:1.5px_black] group-hover:text-black transition-colors">
             KUMAR
@@ -93,7 +93,7 @@ export function Navbar() {
             />
             <span className="relative z-10 flex items-center gap-2">
               RESUME{" "}
-              <span className="text-[8px] opacity-40 group-hover:opacity-100 italic transition-opacity">
+              <span className="text-[12px] opacity-40 group-hover:opacity-100 italic transition-opacity">
                 [🔻]
               </span>
             </span>
@@ -169,7 +169,7 @@ export function Navbar() {
                 href="/Akash_Kumar_Resume.pdf"
                 className="text-2xl font-black underline decoration-3 underline-offset-8 uppercase italic hover:text-gray-400"
               >
-                ACCESS_RESUME.exe
+                VIEW_RESUME
               </a>
               <div className="flex mt-4 gap-8 font-bold uppercase tracking-widest text-xs">
                 <a href="#" className="hover:line-through">

@@ -18,7 +18,7 @@ export const Footer = () => (
         {/* PANEL 1: THE TITLE (Aggressive JJK Logo Style) */}
         <div className="md:col-span-7 space-y-4">
           <div className="inline-block bg-black text-white text-[10px] font-black tracking-[0.5em] px-3 py-1 mb-2">
-            FINAL CHAPTER: CONTACT
+            CONTACT // COLLABORATION
           </div>
           <h2 className="font-bebas text-7xl md:text-[10rem] leading-[0.8] tracking-tighter italic text-black uppercase">
             AKASH <br />
@@ -34,10 +34,10 @@ export const Footer = () => (
         <div className="md:col-span-5 flex flex-col gap-6 border-b-[6px] border-black pb-4">
            <div className="space-y-1">
              <p className="font-black text-[10px] uppercase tracking-widest text-black/70 flex items-center gap-2">
-               <Zap size={10} fill="black" /> Sorcerer Grade: Senior Automation Engineer
+               <Zap size={10} fill="black" /> LLM Systems · RAG · Real-Time Workflows
              </p>
              <p className="font-bold text-lg text-black leading-tight uppercase">
-               Extracting value from chaotic data regimes.
+               Building AI systems for automation, retrieval, and intelligent workflows.
              </p>
            </div>
            
@@ -56,8 +56,8 @@ export const Footer = () => (
       <div className="mt-20 flex flex-col md:flex-row justify-between items-center gap-12">
         <div className="flex flex-col gap-1">
           <span className="font-black text-xs uppercase tracking-[0.4em] text-black">Inquiries</span>
-          <a href="mailto:akash.kumar.devs@gmail.com" className="text-2xl md:text-4xl font-bebas text-black hover:italic transition-all">
-            akash.kumar.devs@gmail.com
+          <a href="mailto:akashsingh4152@gmail.com" className="text-2xl md:text-4xl font-bebas text-black hover:italic transition-all">
+            akashsingh4152@gmail.com
           </a>
         </div>
 
@@ -72,7 +72,7 @@ export const Footer = () => (
           </div>
           
           <span className="relative z-10 flex items-center gap-4">
-             GET RESUME <Download size={24} strokeWidth={3} />
+             VIEW RESUME <Download size={24} strokeWidth={3} />
           </span>
 
           {/* Hard Shadow / Offset Border */}
@@ -83,10 +83,8 @@ export const Footer = () => (
       {/* THE FOOTNOTE */}
       <div className="mt-24 pt-4 border-t-2 border-black flex justify-between items-center text-[10px] font-black uppercase tracking-[0.2em] text-black/70">
         <span>KOLKATA // INDIA</span>
-        <span className="text-black">© 2026 AKASH_SYSTEMS</span>
+        <span className="text-black">© 2026 Akash Kumar</span>
         <div className="flex gap-4">
-          <span>VOL. 01</span>
-          <span>PAGE 404</span>
         </div>
       </div>
     </div>

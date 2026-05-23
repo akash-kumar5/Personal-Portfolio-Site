@@ -8,7 +8,7 @@ const projects = [
     id: "shelly",
     category: "Lead Gen Automation",
     description:
-      "A high-throughput automation system designed to scrape high-intent leads and orchestrate personalized cold-mail sequences at scale.",
+      "Automation platform for lead discovery, outreach workflows, and scalable cold-email operations.",
     focus: "Bypassing anti-bot constraints & high-deliverability mail systems",
     tech: ["Python", "Playwright", "SMTP", "Lead Scoring", "Streamlit"],
     link: "https://github.com/akash-kumar5/Shelly",
@@ -81,7 +81,7 @@ export default function ProjectPage() {
           </span>
         </h1>
         <p className="text-stone-500 font-black uppercase tracking-[0.2em] md:tracking-[0.4em] mt-4 md:mt-6 text-[9px] md:text-xs italic">
-          Registry // Operational Systems // Opsora_V.02
+          AI Systems // Automation // Research Projects
         </p>
       </header>
 
@@ -122,13 +122,13 @@ export default function ProjectPage() {
             >
               <div className="space-y-2">
                 <div className="inline-block bg-stone-100 text-stone-950 px-2 py-0.5 text-[9px] font-black tracking-widest uppercase italic">
-                  Sector_0{index + 1}
+                  PROJECT_0{index + 1}
                 </div>
                 <h2 className="font-bebas text-5xl md:text-7xl leading-none tracking-tighter uppercase italic text-stone-100">
                   {project.name}
                 </h2>
                 <p className="text-[10px] md:text-xs font-black uppercase tracking-[0.3em] text-stone-500">
-                  Classification: {project.category}
+                  Category: {project.category}
                 </p>
               </div>
 
@@ -156,9 +156,9 @@ export default function ProjectPage() {
                 <a
                   href={project.link}
                   target="_blank"
-                  className="inline-flex items-center gap-4 font-bebas text-3xl md:text-4xl text-stone-100 hover:italic hover:pl-4 transition-all group"
+                  className="inline-flex items-center gap-4 font-bebas text-2xl md:text-2xl text-stone-100 hover:italic hover:pl-4 transition-all group"
                 >
-                  ACCESS_REPOSITORY{" "}
+                  OPEN_GITHUB →{" "}
                   <span className="group-hover:translate-x-2 transition-transform text-red-900">
                     →
                   </span>
@@ -183,27 +183,21 @@ export default function ProjectPage() {
           <div className="relative z-10 flex flex-col md:flex-row justify-between items-end gap-12">
             <div className="max-w-2xl">
               <h2 className="font-bebas text-6xl md:text-[10rem] leading-[0.8] italic mb-8 text-stone-950 uppercase tracking-tighter">
-                UNLEASH <br /> THE SYSTEM.
+                LET'S BUILD<br /> SOMETHING COOL.
               </h2>
               <p className="text-xs md:text-sm font-black uppercase tracking-[0.4em] text-stone-600">
-                Seeking specialized collaboration for high-stakes architectures.
+                Open to collaborations in AI, automation, and real-time systems engineering.
               </p>
             </div>
             <a
               href="/contact"
               className="w-full md:w-auto text-center bg-stone-950 text-stone-100 px-12 py-6 font-bebas text-4xl italic tracking-tighter hover:bg-red-900 transition-all shadow-[10px_10px_0px_#444]"
             >
-              INITIATE_CONTRACT →
+              GET_IN_TOUCH →
             </a>
           </div>
         </div>
       </section>
-
-      {/* 5. EDITORIAL FOOTER */}
-      <footer className="relative z-10 max-w-7xl mx-auto py-12 flex justify-between items-center text-[10px] font-black uppercase tracking-[0.5em] text-stone-700">
-        <span>Kolkata // Archive_Ref_2026</span>
-        <span>Vol. 01 // Page 404</span>
-      </footer>
     </main>
   );
 }

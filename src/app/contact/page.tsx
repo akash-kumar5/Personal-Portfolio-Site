@@ -6,7 +6,7 @@ import { Github, Linkedin, Copy, Check } from "lucide-react";
 import OpsoraCTA from "@/components/OpsoraCTA";
 
 export default function ContactPage() {
-  const email = "akash.kumar.devs@gmail.com";
+  const email = "akashsingh4152@gmail.com";
   const [copied, setCopied] = useState(false);
 
   const copyEmail = async () => {
@@ -47,7 +47,7 @@ export default function ContactPage() {
               className="w-full h-full object-cover"
             />
             <div className="absolute top-0 right-0 bg-black text-white px-4 py-1 font-bebas text-xl italic uppercase">
-              Visual_Log // 01
+              Akash Kumar
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@ export default function ContactPage() {
         <div className="lg:col-span-7 space-y-7 md:space-y-12">
           <header className="border-b-[6px] md:border-b-[8px] border-black pb-6 md:pb-8">
             <div className="inline-block bg-black text-white px-3 py-1 text-[9px] md:text-[10px] font-black tracking-[0.3em] md:tracking-[0.4em] mb-4 uppercase italic">
-              Initiate_Transmission
+              CONTACT // COLLABORATION
             </div>
             <h1 className="text-6xl sm:text-7xl md:text-9xl font-bebas leading-[0.85] md:leading-[0.8] tracking-tighter italic uppercase">
               CON
@@ -69,13 +69,13 @@ export default function ContactPage() {
           <p className="text-xl md:text-2xl font-black leading-tight tracking-tight uppercase max-w-xl">
             Building systems where{" "}
             <span className="bg-black text-white px-2 italic">correctness</span>{" "}
-            matters. Open for high-stakes conversations.
+            matters. Open to conversations around AI systems, automation, and engineering opportunities.
           </p>
 
           {/* Email Interaction */}
           <div className="space-y-4">
             <label className="text-[10px] font-black uppercase tracking-[0.2em] md:tracking-[0.3em] text-black/40">
-              Direct_Channel
+              Email
             </label>
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 md:gap-6">
               <a
@@ -93,7 +93,7 @@ export default function ContactPage() {
                 className="flex items-center gap-2 px-4 md:px-6 py-2 border-2 border-black font-black uppercase text-[9px] md:text-[10px] tracking-widest hover:bg-black hover:text-white transition-all shadow-[4px_4px_0px_black] active:shadow-none active:translate-x-1 active:translate-y-1 bg-white"
               >
                 {copied ? <Check size={14} /> : <Copy size={14} />}
-                {copied ? "COPIED" : "COPY_ADDRESS"}
+                {copied ? "COPIED" : "COPY_EMAIL"}
               </button>
             </div>
           </div>
@@ -104,7 +104,7 @@ export default function ContactPage() {
             >
               <div className="text-right">
                 <span className="block text-stone-500 text-[9px] font-black uppercase tracking-[0.5em] mb-2 italic">
-                  Establish_Link
+                  Available for Collaboration
                 </span>
                 <span className="block font-bebas text-5xl md:text-7xl text-stone-700 italic leading-none group-hover:text-red-900 transition-colors">
                   CONNECT
@@ -130,7 +130,7 @@ export default function ContactPage() {
                 </span>
               </div>
               <p className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-black/50 group-hover:text-white/50">
-                Professional_Network // CONNECT
+                Professional_Profile // CONNECT
               </p>
             </a>
            
@@ -146,7 +146,7 @@ export default function ContactPage() {
                 </span>
               </div>
               <p className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-black/50 group-hover:text-white/50">
-                Code_Repository // ACCESS
+                Projects & Open Source
               </p>
             </a>
           </div>
