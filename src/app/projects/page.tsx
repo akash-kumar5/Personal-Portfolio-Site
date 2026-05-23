@@ -183,7 +183,7 @@ export default function ProjectPage() {
           <div className="relative z-10 flex flex-col md:flex-row justify-between items-end gap-12">
             <div className="max-w-2xl">
               <h2 className="font-bebas text-6xl md:text-[10rem] leading-[0.8] italic mb-8 text-stone-950 uppercase tracking-tighter">
-                LET'S BUILD<br /> SOMETHING COOL.
+                LET&apos;S BUILD<br /> SOMETHING COOL.
               </h2>
               <p className="text-xs md:text-sm font-black uppercase tracking-[0.4em] text-stone-600">
                 Open to collaborations in AI, automation, and real-time systems engineering.
